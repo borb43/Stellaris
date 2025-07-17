@@ -9,8 +9,9 @@ SMODS.Joker {
     },
     config = { extra = { mult = 18, type = "Full House" }},
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult } }
+        return { vars = { card.ability.extra.mult, card.ability.extra.type } }
     end,
+    discovered = true,
     rarity = 1,
     atlas = "placeholder",
     pos = { x = 0, y = 0},
