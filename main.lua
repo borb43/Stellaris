@@ -5,7 +5,7 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
-
+-- register custom rarities
 SMODS.Rarity = {
     key = "stellar",
     loc_txt = {
@@ -17,3 +17,7 @@ SMODS.Rarity = {
         return weight
     end
 }
+
+
+--actually load mod files
+assert(SMODS.load_file("items/joker.lua"))()
