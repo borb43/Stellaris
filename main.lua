@@ -19,5 +19,5 @@ SMODS.Rarity {
 }
 
 
---loads the loader
-assert(SMODS.load_file("loader.lua"))()
+--loads everything
+assert(SMODS.load_file("items/joker.lua"))()
