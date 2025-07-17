@@ -19,5 +19,5 @@ SMODS.Rarity {
 }
 
 
---actually load mod files
-assert(SMODS.load_file("items/joker.lua"))()
+--loads the loader
+assert(SMODS.load_file("loader.lua"))()
