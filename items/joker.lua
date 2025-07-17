@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "Silly",
+    key = "silly",
     loc_txt = {
         name = "Silly Joker",
         text = {
