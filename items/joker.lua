@@ -4,12 +4,12 @@ SMODS.Joker {
         name = "Silly Joker",
         text = {
             "{C:mult}+#1#{} Mult if played poker hand",
-            "contains a {C:attention}#2#{}"
+            "contains a {C:attention}Full House{}"
         }
     },
-    config = { extra = { mult = 18, type = "Full House" }},
+    config = { extra = { mult = 18 }},
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult, card.ability.extra.type } }
+        return { vars = { card.ability.extra.mult } }
     end,
     discovered = true,
     rarity = 1,
