@@ -1,0 +1,16 @@
+{
+	"id": "Erisstuff",
+	"name": "Eris' stuff",
+	"display_name": "Eris' stuff",
+	"author": ["Eris (borb)"],
+	"description": "Questionable content mod",
+	"prefix": "erisstuff",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "666665",
+	"badge_text_colour": "FFFFFF",
+	"version": "0.0.1~pre",
+	"dependencies": [
+        "Steamodded (>=1.0.0)"
+    ]
+}
