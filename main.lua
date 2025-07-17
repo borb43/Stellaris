@@ -6,7 +6,7 @@ SMODS.Atlas {
     py = 95
 }
 -- register custom rarities
-SMODS.Rarity = {
+SMODS.Rarity {
     key = "stellar",
     loc_txt = {
         name = "Stellar"
