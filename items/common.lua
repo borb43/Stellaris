@@ -1,15 +1,8 @@
 SMODS.Joker {
     key = "silly",
-    loc_txt = {
-        name = "Silly Joker",
-        text = {
-            "{C:mult}+#1#{} Mult if played poker hand",
-            "contains a {C:attention}Full House{}"
-        }
-    },
     config = { extra = { mult = 18, type = "Full House" } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult, card.ability.extra.type } }
+        return { vars = { card.ability.extra.mult, localize( card.ability.extra.type, "poker_hands" ) } }
     end,
     discovered = true,
     rarity = 1,
@@ -27,16 +20,9 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = "dubious",
-    loc_txt = {
-        name = "Dubious Joker",
-        text = {
-            "{C:chips}+#1#{} Chips if played poker hand",
-            "contains a {C:attention}Full House{}"
-        }
-    },
     config = { extra = { chips = 140, type = "Full House" } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.chips, card.ability.extra.type } }
+        return { vars = { card.ability.extra.chips, localize( card.ability.extra.type, "poker_hands" ) } }
     end,
     discovered = true,
     rarity = 1,
