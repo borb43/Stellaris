@@ -17,7 +17,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0},
     cost = 4,
     calculate = function(self, card, context)
-        if context.joker_main and next(context.poker_hand[card.ability.extra.type]) then
+        if context.joker_main and next(context.poker_hands[card.ability.extra.type]) then
             return {
                 mult = card.ability.extra.mult
             }
@@ -44,7 +44,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     cost = 4,
     calculate = function(self, card, context)
-        if context.joker_main and next(context.poker_hand[card.ability.extra.type]) then
+        if context.joker_main and next(context.poker_hands[card.ability.extra.type]) then
             return {
                 chips = card.ability.extra.chips
             }
