@@ -21,3 +21,4 @@ SMODS.Rarity {
 
 --loads everything
 assert(SMODS.load_file("items/common.lua"))()
+assert(SMODS.load_file("items/spectral.lua"))()

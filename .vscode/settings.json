@@ -3,6 +3,12 @@
         "SMODS",
         "mult",
         "HEX",
-        "localize"
+        "localize",
+        "G",
+        "pseudorandom_element",
+        "Event",
+        "play_sound",
+        "delay",
+        "poll_edition"
     ]
 }

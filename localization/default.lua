@@ -15,6 +15,15 @@ return {
                     "contains a {C:attention}#2#{}"
                 }
             }
+        },
+        Spectral = {
+            c_stlr_shatter = {
+                name = "Shatter",
+                text = {
+                    "Destroys {C:attention}#1#{} random card in your hand,",
+                    "add {C:attention}#2#{} random {C:dark_edition}Editioned{} {C:attention}Stone{} cards to your hand"
+                }
+            }
         }
     }
 }
