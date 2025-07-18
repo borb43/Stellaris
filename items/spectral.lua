@@ -21,7 +21,7 @@ SMODS.Consumable {
                 return true
             end
         }))
-        SMODS.destroy_card(card_to_destroy)
+        SMODS.destroy_cards(card_to_destroy)
 
         G.E_MANAGER:add_event(Event({
             trigger = "after",
