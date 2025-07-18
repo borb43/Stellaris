@@ -9,6 +9,7 @@
         "Event",
         "play_sound",
         "delay",
-        "poll_edition"
+        "poll_edition",
+        "edition_generic"
     ]
 }

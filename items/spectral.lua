@@ -29,7 +29,7 @@ SMODS.Consumable {
             func = function()
                 local cards = {}
                 for i = 1, card.ability.extra.create do
-                    cards[i] = SMODS.add_card { set = "Base", enhancement = "m_stone", edition = poll_edition({ guaranteed = true })}
+                    cards[i] = SMODS.add_card { set = "Base", enhancement = "m_stone", edition = poll_edition(edition_generic, nil , true, true)}
                 end
                 SMODS.calculate_context({ playing_card_added = true, cards = cards })
                 return true
