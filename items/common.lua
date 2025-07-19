@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker { --silly joker, +18 mult if hand contains a full house
     key = "silly",
     config = { extra = { mult = 18, type = "Full House" } },
     loc_vars = function(self, info_queue, card)
@@ -18,7 +18,7 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+SMODS.Joker {  --dubious joker, +140 chips if hand contains a full house
     key = "dubious",
     config = { extra = { chips = 140, type = "Full House" } },
     loc_vars = function(self, info_queue, card)
@@ -38,7 +38,7 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+SMODS.Joker { --algebra albert, X1.1 mult when ace/face cards are scored
     key = "algebra",
     config = { extra = { mult = 1.1 } },
     loc_vars = function(self, info_queue, card)
