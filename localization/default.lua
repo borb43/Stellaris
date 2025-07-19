@@ -14,6 +14,13 @@ return {
                     "{C:chips}+#1#{} Chips if played poker hand",
                     "contains a {C:attention}#2#{}"
                 }
+            },
+            j_stlr_algebra = {
+                name = "Algebra Albert",
+                text = {
+                    "Played {C:attention}Aces{} and {C:attention}Face{} cards give",
+                    "{X:mult,C:white}X#1#{} Mult when scored"
+                }
             }
         },
         Spectral = {
