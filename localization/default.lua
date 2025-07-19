@@ -47,5 +47,13 @@ return {
                 }
             }
         }
+    },
+    misc = {
+        dictionary = {
+            k_stellar = "Stellar",
+        },
+        labels = {
+            k_stellar = "Stellar"
+        }
     }
 }
