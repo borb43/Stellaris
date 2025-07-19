@@ -2,7 +2,7 @@ SMODS.Joker { --slappy hand, X1 mult for each card in your hand
     key = "slappyhand",
     config = { extra = { mult_per_card = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { math.min(#G.hand.cards*card.ability.extra.mult_per_card , 1), card.ability.extra.mult_per_card } }
+        return { vars = { math.min((((G.hand and G.hand.cards) and #G.hand.cards or 8) * card.ability.extra.mult_per_card) , 1), card.ability.extra.mult_per_card } }
     end,
     discovered = true,
     rarity = 3,
