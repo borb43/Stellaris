@@ -12,7 +12,7 @@ SMODS.Joker { --slappy hand, X1 mult for each card in your hand
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                xmult = math.min(#G.hand.cards*card.ability.extra.mult_per_card, 1)
+                xmult = math.max(#G.hand.cards*card.ability.extra.mult_per_card, 1)
             }
         end
     end
