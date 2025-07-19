@@ -37,3 +37,24 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "algebra",
+    config = { extra = { mult = 1.25 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult } }
+    end,
+    discovered = true,
+    rarity = 1,
+    atlas = "placeholder",
+    pos = { x = 0, y = 0 },
+    cost = 4,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+        (context.other_card:is_face() or context.other_card:get_id() == 14 ) then
+            return {
+                xmult = card.ability.extra.mult
+            }
+        end
+    end
+}
