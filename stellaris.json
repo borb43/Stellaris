@@ -7,7 +7,7 @@
 	"prefix": "stlr",
 	"main_file": "main.lua",
 	"priority": 0,
-	"badge_colour": "666665",
+	"badge_colour": "1F0D35",
 	"badge_text_colour": "FFFFFF",
 	"version": "0.1.1~beta",
 	"dependencies": [
