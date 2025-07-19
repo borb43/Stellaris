@@ -50,10 +50,10 @@ return {
     },
     misc = {
         dictionary = {
-            k_stellar = "Stellar",
+            k_stlr_stellar = "Stellar",
         },
         labels = {
-            k_stellar = "Stellar"
-        }
+            k_stlr_stellar = "Stellar",
+        },
     }
 }
