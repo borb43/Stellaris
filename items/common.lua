@@ -40,7 +40,7 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = "algebra",
-    config = { extra = { mult = 1.25 } },
+    config = { extra = { mult = 1.1 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mult } }
     end,
