@@ -28,6 +28,14 @@ return {
                     "{X:mult,C:white}X#2#{} Mult for every card in your hand",
                     "{C:inactive}(Currently {X:mult,C:white}X#1# {C:inactive} Mult)"
                 }
+            },
+            j_stlr_paintsmear = {
+                name = "Paint Smear",
+                text = {
+                    "This Joker gains {X:mult,C:white}X#2#{} Mult when",
+                    "each played {C:attention}Wild{} card is scored",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
+                }
             }
         },
         Spectral = {
