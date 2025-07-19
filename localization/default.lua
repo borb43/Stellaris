@@ -21,6 +21,13 @@ return {
                     "Played {C:attention}Aces{} and {C:attention}Face{} cards give",
                     "{X:mult,C:white}X#1#{} Mult when scored"
                 }
+            },
+            j_stlr_slappyhand = {
+                name = "Slappy Hand",
+                text = {
+                    "{X:mult,C:white}X#2#{} Mult for every card in your hand",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1# {C:inactive} Mult)"
+                }
             }
         },
         Spectral = {
