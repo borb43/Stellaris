@@ -36,6 +36,12 @@ return {
                     "each played {C:attention}Wild{} card is scored",
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
+            },
+            j_stlr_rkey = {
+                name = "R Key",
+                text = {
+                    "Sets ante to #1# when sold"
+                }
             }
         },
         Spectral = {
