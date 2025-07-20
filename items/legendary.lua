@@ -17,6 +17,9 @@ SMODS.Joker {
             ease_ante(ante_change)
             G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
             G.GAME.round_resets.blind_ante = card.ability.extra.set_ante
+            if G.GAME.banned_keys and not G.GAME.banned_keys["j_stlr_rkey"] then
+                G.GAME.banned_keys["j_stlr_rkey"] = true
+            end
             return true
         end
     end
