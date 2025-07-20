@@ -34,4 +34,5 @@ SMODS.Rarity {
 assert(SMODS.load_file("items/common.lua"))()
 assert(SMODS.load_file("items/uncommon.lua"))()
 assert(SMODS.load_file("items/rare.lua"))()
+assert(SMODS.load_file("items/legendary.lua"))()
 assert(SMODS.load_file("items/spectral.lua"))()
