@@ -23,7 +23,7 @@ SMODS.Joker { --R key, sets ante to 1 when sold
                 G.GAME.banned_keys[context.blueprint_card.config.center.key] = true
             end
             return {
-                message = localize("k_stlr_reset")
+                message = localize("k_stlr_resetante")
             }
         end
     end
