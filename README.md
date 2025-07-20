@@ -4,7 +4,7 @@
 
 Requires [Steamodded](https://github.com/Steamodded/smods), obviously
 Currently adds:
-- 5 Jokers
+- 6 Jokers
 - 1 Spectral card
 
 If you run into any issues or crashes, be sure to create an [issue](https://github.com/borb43/Stellaris/issues/new) with the crash log attached
