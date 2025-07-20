@@ -54,7 +54,17 @@ return {
                     "add {C:attention}#2#{} random {C:dark_edition}Editioned{} {C:attention}Stone{} cards to your hand"
                 }
             }
-        }
+        },
+        Other = {
+            stlr_credits = {
+                name = "Credits",
+                text = {
+                    "Idea by {C:attention}#1#{} on {C:attention}#2#{}",
+                    "Art by {C:attention}#3#{} on {C:attention}#4#{}",
+                    "Code by {C:attention}#5#{} on {C:attention}#6#{}"
+                }
+            }
+        },
     },
     misc = {
         dictionary = {
