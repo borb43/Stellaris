@@ -40,7 +40,8 @@ return {
             j_stlr_rkey = {
                 name = "R Key",
                 text = {
-                    "Sets ante to #1# when sold"
+                    "Sets ante to #1# when sold",
+                    "{C:red}banishes self{}"
                 }
             }
         },
