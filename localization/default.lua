@@ -58,6 +58,7 @@ return {
     misc = {
         dictionary = {
             k_stlr_stellar = "Stellar",
+            k_stlr_reset = "Ante 1",
         },
         labels = {
             k_stlr_stellar = "Stellar",
