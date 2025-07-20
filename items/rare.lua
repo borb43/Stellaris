@@ -8,6 +8,7 @@ SMODS.Joker { --slappy hand, X1 mult for each card in your hand
     rarity = 3,
     atlas = "placeholder",
     pos = { x = 2, y = 0},
+    blueprint_compat = true,
     cost = 8,
     calculate = function(self, card, context)
         if context.joker_main then

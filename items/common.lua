@@ -8,6 +8,7 @@ SMODS.Joker { --silly joker, +18 mult if hand contains a full house
     rarity = 1,
     atlas = "common",
     pos = { x = 0, y = 0},
+    blueprint_compat = true,
     cost = 4,
     calculate = function(self, card, context)
         if context.joker_main and next(context.poker_hands[card.ability.extra.type]) then
@@ -28,6 +29,7 @@ SMODS.Joker {  --dubious joker, +140 chips if hand contains a full house
     rarity = 1,
     atlas = "common",
     pos = { x = 1, y = 0 },
+    blueprint_compat = true,
     cost = 4,
     calculate = function(self, card, context)
         if context.joker_main and next(context.poker_hands[card.ability.extra.type]) then
@@ -48,6 +50,7 @@ SMODS.Joker { --algebra albert, X1.1 mult when ace/face cards are scored
     rarity = 1,
     atlas = "common",
     pos = { x = 2, y = 0 },
+    blueprint_compat = true,
     cost = 4,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and

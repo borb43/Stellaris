@@ -9,6 +9,7 @@ SMODS.Joker { --paint smear, gains x0.1 mult when a wild card is scored
     rarity = 2,
     atlas = "placeholder",
     pos = { x = 1, y = 0 },
+    blueprint_compat = true,
     cost = 6,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and not context.blueprint
