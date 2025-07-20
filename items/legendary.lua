@@ -9,7 +9,7 @@ SMODS.Joker { --R key, sets ante to 1 when sold
     atlas = "placeholder",
     pos = { x = 3, y = 0 },
     soul_pos = { x = 4, y = 0 },
-    blueprint_compat = false,
+    blueprint_compat = true,
     cost = 20,
     calculate = function(self, card, context)
         if context.selling_self then
