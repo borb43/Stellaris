@@ -1,3 +1,4 @@
+-- this is just the en-us file, but i cant be assed to copy this every time i change it for a seperate en-us file 
 return {
     descriptions = {
         Joker = {
