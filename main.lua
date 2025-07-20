@@ -5,13 +5,20 @@ SMODS.Atlas({
     px = 32,
     py = 32
 })
--- register placeholder atlas
+-- register all other atlases
 SMODS.Atlas {
     key = "placeholder",
     path = "placeholder.png",
     px = 71,
     py = 95
 }
+SMODS.Atlas {
+    key = "common",
+    path = "common.png",
+    px = 71,
+    py = 95
+}
+
 -- register custom rarities
 SMODS.Rarity {
     key = "stellar",
