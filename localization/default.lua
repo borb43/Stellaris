@@ -61,6 +61,13 @@ return {
                     "Destroys {C:attention}#1#{} random card in your hand,",
                     "add {C:attention}#2#{} random {C:dark_edition}Editioned{} {C:attention}Stone{} cards to your hand"
                 }
+            },
+            c_stlr_stellarstar = {
+                name = "Stellaris",
+                text = {
+                    "Creates a random {C:stellar,E:2}Stellar{C:attention}Joker{}",
+                    "destroys all other {C:attention}Jokers"
+                }
             }
         },
         wonder = {
