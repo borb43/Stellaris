@@ -57,7 +57,7 @@ SMODS.Consumable {
 
 SMODS.Joker {
     key = "circus",
-    config = { extra = { xmult = 4 } },
+    config = { extra = { xmult = 3 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,
