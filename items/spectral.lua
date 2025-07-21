@@ -45,7 +45,7 @@ SMODS.Consumable {
 SMODS.Consumable {
     key = "shroud",
     set = "Spectral",
-    config = { extra = { seal = "pink" }, max_highlighted = 1 },
+    config = { extra = { seal = "stlr_pink" }, max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.max_highlighted } }
