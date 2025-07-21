@@ -12,7 +12,7 @@ SMODS.Consumable {
     discovered = true,
     set = "stlr_wonder",
     atlas = "placeholder",
-    pos = { x = 3, y = 3 },
+    pos = { x = 3, y = 2 },
     cost = 4,
     use = function(self, card, area, copier)
         local valid_targets = SMODS.Edition:get_edition_cards(G.jokers, true)
