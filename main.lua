@@ -25,6 +25,11 @@ SMODS.Atlas {
     py = 95
 }
 
+--load optional features
+SMODS.current_mod.optional_features = {
+    post_trigger = true,
+}
+
 --loads everything
 assert(SMODS.load_file("items/common.lua"))()
 assert(SMODS.load_file("items/uncommon.lua"))()

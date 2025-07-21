@@ -53,3 +53,25 @@ SMODS.Consumable {
         }))
     end
 }
+
+SMODS.Joker {
+    key = "stellar-jimbo",
+    config = { extra = { xmult = 4 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.xmult } }
+    end,
+    rarity = "stlr_stellar",
+    atlas = "placeholder",
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 2, y = 1 },
+    blueprint_compat = true,
+    cost = 40,
+    calculate = function(self, card, context)
+        if context.post_trigger and
+        ( other_context == context.before or other_context == context.individual or other_context == context.joker_main or other_context == context.other_joker or other_context == context.final_scoring_step ) then
+            return {
+                xmult = card.ability.extra.xmult
+            }
+        end
+    end
+}
