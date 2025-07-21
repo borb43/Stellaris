@@ -6,6 +6,7 @@ SMODS.Booster {
     atlas = "placeholder",
     pos = { x = 0, y = 3 },
     config = { extra = 2, choose = 1 },
+    draw_hand = true,
     group_key = "k_stlr_wonderpack",
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -38,6 +39,7 @@ SMODS.Booster {
     atlas = "placeholder",
     pos = { x = 0, y = 3 },
     config = { extra = 2, choose = 1 },
+    draw_hand = true,
     group_key = "k_stlr_wonderpack",
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -70,6 +72,7 @@ SMODS.Booster {
     atlas = "placeholder",
     pos = { x = 0, y = 3 },
     config = { extra = 4, choose = 1 },
+    draw_hand = true,
     group_key = "k_stlr_wonderpack",
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -102,6 +105,7 @@ SMODS.Booster {
     atlas = "placeholder",
     pos = { x = 0, y = 3 },
     config = { extra = 4, choose = 2 },
+    draw_hand = true,
     group_key = "k_stlr_wonderpack",
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
