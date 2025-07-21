@@ -54,7 +54,7 @@ return {
                     "met {C:dark_edition}editie{} aan je hand toe"
                 }
             }
-        }
+        },
     },
     misc = {
         dictionary = {
