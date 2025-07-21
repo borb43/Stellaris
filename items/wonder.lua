@@ -9,6 +9,7 @@ SMODS.ConsumableType {
 
 SMODS.Consumable {
     key = "dreamwheel",
+    discovered = true,
     set = "stlr_wonder",
     atlas = "placeholder",
     pos = { x = 3, y = 3 },
