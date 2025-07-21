@@ -49,6 +49,7 @@ SMODS.Consumable {
                 play_sound("timpani")
                 SMODS.add_card( { set = "Joker", rarity = "stlr_stellar" } )
                 card:juice_up(0.3, 0.5)
+                return true
             end
         }))
     end
