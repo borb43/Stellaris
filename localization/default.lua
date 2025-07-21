@@ -44,6 +44,14 @@ return {
                     "Sets ante to #1# when sold",
                     "{C:red}banishes self{}"
                 }
+            },
+            j_stlr_scales = {
+                name = "Tipped Scales",
+                text = {
+                    "Increases all {C:green}numerators{} and {C:green}denominators{}",
+                    "of {C:attention}listed{} probabilities by {C:green}1{}",
+                    "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}2 in 4{C:inactive})"
+                }
             }
         },
         Spectral = {
