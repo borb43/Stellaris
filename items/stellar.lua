@@ -55,7 +55,7 @@ SMODS.Consumable {
 }
 
 SMODS.Joker {
-    key = "stellar-jimbo",
+    key = "circus",
     config = { extra = { xmult = 4 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }

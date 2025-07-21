@@ -52,6 +52,12 @@ return {
                     "of {C:attention}listed{} probabilities by {C:green}1{}",
                     "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}2 in 4{C:inactive})"
                 }
+            },
+            j_stlr_circus = {
+                name = "S-001 CIRCUS",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult when another Joker is triggered"
+                }
             }
         },
         Spectral = {
