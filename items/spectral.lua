@@ -50,6 +50,10 @@ SMODS.Consumable {
         info_queue[#info_queue+1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.extra.max_highlighted } }
     end,
+    discovered = true,
+    atlas = "placeholder",
+    pos = { x = 2, y = 2 },
+    cost = 4,
     use = function(self, card, area, copier)
         local conv_card = G.hand.highlighted[1]
         G.E_MANAGER:add_event(Event({
