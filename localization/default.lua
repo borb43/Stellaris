@@ -63,7 +63,7 @@ return {
                 }
             }
         },
-        stlr_wonder = {
+        wonder = {
             c_stlr_dreamwheel = {
                 name = "Wheel of Dreams",
                 text = {
