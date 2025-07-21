@@ -19,17 +19,6 @@ SMODS.Atlas {
     py = 95
 }
 
--- register custom rarities
-SMODS.Rarity {
-    key = "stellar",
-    badge_color = HEX("1f0d35"),
-    default_weight = 0,
-    get_weight = function(self, weight, object_type)
-        return weight
-    end
-}
-
-
 --loads everything
 assert(SMODS.load_file("items/common.lua"))()
 assert(SMODS.load_file("items/uncommon.lua"))()
@@ -38,3 +27,4 @@ assert(SMODS.load_file("items/legendary.lua"))()
 assert(SMODS.load_file("items/spectral.lua"))()
 assert(SMODS.load_file("items/wonder.lua"))()
 assert(SMODS.load_file("items/booster.lua"))()
+assert(SMODS.load_file("items/stellar.lua"))()
