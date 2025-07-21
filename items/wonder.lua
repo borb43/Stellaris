@@ -1,5 +1,5 @@
 SMODS.ConsumableType {
-    key = "wonder",
+    key = "stlr_wonder",
     primary_colour = HEX("ffa3f8"),
     secondary_colour = HEX("ff69f1"),
     collection_rows = { 6, 6 },
