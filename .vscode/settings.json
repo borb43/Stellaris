@@ -11,6 +11,8 @@
         "delay",
         "poll_edition",
         "edition_generic",
-        "ease_ante"
+        "ease_ante",
+        "ease_colour",
+        "ease_background_colour"
     ]
 }
