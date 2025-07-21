@@ -6,6 +6,7 @@ SMODS.Seal {
     key = "pink",
     atlas = "modifiers",
     pos = { x = 0, y = 0 },
+    discovered = true,
     badge_colour = HEX("eb90b8"),
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and context.other_card == card and
