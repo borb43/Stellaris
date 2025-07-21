@@ -24,6 +24,12 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
+SMODS.Atlas {
+    key = "modifiers",
+    path = "modifiers.png",
+    px = 71,
+    py = 95
+}
 
 --load optional features
 SMODS.current_mod.optional_features = {
