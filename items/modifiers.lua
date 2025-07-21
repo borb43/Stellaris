@@ -2,7 +2,7 @@
 
 
 --seals
-SMODS.Seal {
+SMODS.Seal { --pink seal, creates a wonder card if scored on first hand
     key = "pink",
     atlas = "modifiers",
     pos = { x = 0, y = 0 },

@@ -7,7 +7,7 @@ SMODS.Rarity {
     end
 }
 
-SMODS.Consumable {
+SMODS.Consumable { --stellaris, creates a stellar joker and destroys all other jokers
     key = "stellarstar",
     set = "Spectral",
     atlas = "spectral",
@@ -55,7 +55,7 @@ SMODS.Consumable {
     end
 }
 
-SMODS.Joker {
+SMODS.Joker { --circus, X3 mult when a joker is triggered
     key = "circus",
     config = { extra = { xmult = 3 } },
     loc_vars = function(self, info_queue, card)

@@ -6,7 +6,7 @@ SMODS.ConsumableType {
     default = "c_stlr_dreamwheel",
 }
 
-SMODS.Consumable {
+SMODS.Consumable { --wheel of dreams, applies a random edition
     key = "dreamwheel",
     discovered = true,
     set = "wonder",
@@ -31,7 +31,7 @@ SMODS.Consumable {
     end
 }
 
-SMODS.Consumable {
+SMODS.Consumable { --sage, creates an editioned uncommon
     key = "sage",
     discovered = true,
     set = "wonder",

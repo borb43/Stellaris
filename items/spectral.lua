@@ -1,4 +1,4 @@
-SMODS.Consumable {
+SMODS.Consumable { --shatter, like familiar but stone cards
     key = "shatter",
     set = "Spectral",
     config = { extra = { destroy = 1, create = 5 } },
@@ -42,7 +42,7 @@ SMODS.Consumable {
     end
 }
 
-SMODS.Consumable {
+SMODS.Consumable { --shroud, adds a pink seal
     key = "shroud",
     set = "Spectral",
     config = { extra = { seal = "stlr_pink" }, max_highlighted = 1 },
