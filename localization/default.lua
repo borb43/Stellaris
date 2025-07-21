@@ -55,6 +55,15 @@ return {
                 }
             }
         },
+        stlr_wonder = {
+            c_stlr_dreamwheel = {
+                name = "Wheel of Dreams",
+                text = {
+                    "Applies a random {C:dark_edition}edition{}",
+                    "to a random Joker"
+                }
+            }
+        },
         Other = {
             stlr_credits = {
                 name = "Credits",
