@@ -44,7 +44,7 @@ SMODS.Consumable {
             delay = 0.4,
             func = function()
                 play_sound("timpani")
-                SMODS.add_card({ set = "Joker", rarity = "Rare", edition = poll_edition(edition_generic, nil , nil, true )})
+                SMODS.add_card({ set = "Joker", rarity = "Uncommon", edition = poll_edition(edition_generic, nil , nil, true )})
                 return true
             end
         }))
