@@ -14,7 +14,7 @@ SMODS.Seal {
             G.GAME.consumable_buffer = G.GAME.consumable_buffer + 1
             G.E_MANAGER:add_event(Event({
                 trigger = "before",
-                delay = 0.1,
+                delay = 0,
                 func = function()
                     SMODS.add_card( { set = "wonder" } )
                     return true
