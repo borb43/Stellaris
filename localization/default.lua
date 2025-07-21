@@ -58,6 +58,15 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult when another Joker is triggered"
                 }
+            },
+            j_stlr_clover = {
+                name = "57-Leaf Clover",
+                text = {
+                    "Adds {C:green}#1#{} to all {C:attention}listed {C:green}numerators{}.",
+                    "Increases by {C:green}#2#{} when each played",
+                    "{C:clubs}#3#{} card is scored",
+                    "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}#4# in 3{C:inactive})"
+                }
             }
         },
         Spectral = {
