@@ -133,6 +133,15 @@ return {
                     "{C:attention}#2#{C:wonder} Wonder{} cards to",
                     "be used immediately"
                 }
+            },
+            stlr_pink_seal = {
+                name = "Pink Seal",
+                text = {
+                    "Creates a {C:wonder}Wonder{} card",
+                    "when scored on the",
+                    "first hand of round",
+                    "{C:inactive}(Must have room){}"
+                }
             }
         },
     },
@@ -143,10 +152,12 @@ return {
             b_wonder_cards = "Wonder Cards",
             k_wonder = "Wonder",
             k_stlr_wonderpack = "Wonder Pack",
+            k_plus_wonder = "+1 Wonder",
         },
         labels = {
             stlr_stellar = "Stellar",
             wonder = "Wonder",
+            stlr_pink_seal = "Pink Seal"
         },
     }
 }
