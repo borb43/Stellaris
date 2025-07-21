@@ -63,6 +63,15 @@ return {
                     "Art by {C:attention}#3#{} on {C:attention}#4#{}",
                     "Code by {C:attention}#5#{} on {C:attention}#6#{}"
                 }
+            },
+            undiscovered_stlr_wonder = {
+                name = "Not Discovered",
+                text = {
+                    "Purchase or use",
+                    "this card in an",
+                    "unseeded run to",
+                    "learn what it does",
+                }
             }
         },
     },
