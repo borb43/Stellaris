@@ -9,7 +9,7 @@ SMODS.Seal {
     discovered = true,
     badge_colour = HEX("eb90b8"),
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card == card and
+        if context.main_scoring and context.cardarea == G.play and
         G.GAME.current_round.hands_played <= 1 and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
             G.E_MANAGER:add_event(Event({
