@@ -96,7 +96,7 @@ SMODS.Booster {
 
 SMODS.Booster {
     key = "wonder_mega_1",
-    weight = 0.3,
+    weight = 0.07,
     kind = "stlr_wonder",
     cost = 4,
     atlas = "placeholder",
