@@ -30,3 +30,26 @@ SMODS.Consumable {
         return next(SMODS.Edition:get_edition_cards(G.jokers, true))
     end
 }
+
+SMODS.Consumable {
+    key = "sage",
+    discovered = true,
+    set = "wonder",
+    atlas = "placeholder",
+    pos = { x = 3, y = 2 },
+    cost = 4,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger =  "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani")
+                SMODS.add_card({ set = "Joker", rarity = "Rare", edition = poll_edition(edition_generic, nil , nil, true )})
+                return true
+            end
+        }))
+    end,
+    can_use = function(self, card)
+        return #G.jokers.cards < G.jokers.config.card_limit or card.area == G.jokers
+    end
+}

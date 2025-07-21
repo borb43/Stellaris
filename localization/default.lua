@@ -70,6 +70,13 @@ return {
                     "Applies a random {C:dark_edition}edition{}",
                     "to a random Joker"
                 }
+            },
+            c_stlr_sage = {
+                name = "Sage",
+                text = {
+                    "Creates a random {C:dark_edition}editioned{}",
+                    "{C:uncommon}Uncommon{C:attention} Joker"
+                }
             }
         },
         Other = {
