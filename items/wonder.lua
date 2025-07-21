@@ -1,5 +1,5 @@
 SMODS.ConsumableType {
-    key = "stlr_wonder",
+    key = "wonder",
     primary_colour = HEX("ffa3f8"),
     secondary_colour = HEX("ff69f1"),
     collection_rows = { 6, 6 },
@@ -10,7 +10,7 @@ SMODS.ConsumableType {
 SMODS.Consumable {
     key = "dreamwheel",
     discovered = true,
-    set = "stlr_wonder",
+    set = "wonder",
     atlas = "placeholder",
     pos = { x = 3, y = 2 },
     cost = 4,

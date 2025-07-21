@@ -20,7 +20,7 @@ SMODS.Booster {
     end,
     create_card = function(self, card)
         return {
-            set = "stlr_wonder",
+            set = "wonder",
             area = G.pack_cards,
             skip_materialize = true,
             soulable = true,

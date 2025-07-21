@@ -89,6 +89,14 @@ return {
                     "unseeded run to",
                     "learn what it does",
                 }
+            },
+            p_stlr_wonder_normal = {
+                name = "Wonder Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:stlr_wonder} Wonder{} cards to",
+                    "be used immediately",
+                }
             }
         },
     },
@@ -96,12 +104,12 @@ return {
         dictionary = {
             k_stlr_stellar = "Stellar",
             k_stlr_resetante = "Ante 1",
-            b_stlr_wonder_cards = "Wonder Cards",
-            k_stlr_wonder = "Wonder"
+            b_wonder_cards = "Wonder Cards",
+            k_wonder = "Wonder"
         },
         labels = {
             stlr_stellar = "Stellar",
-            stlr_wonder = "Wonder",
+            wonder = "Wonder",
         },
     }
 }
