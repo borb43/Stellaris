@@ -16,8 +16,8 @@ SMODS.Booster {
     end,
     discovered = true,
     ease_background_colour = function(self)
-        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.stlr_wonder)
-        ease_background_colour({ new_colour = G.C.SET.stlr_wonder, special_colour = G.C.WHITE, contrast = 2 })
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.wonder)
+        ease_background_colour({ new_colour = G.C.SET.wonder, special_colour = G.C.WHITE, contrast = 2 })
     end,
     create_card = function(self, card)
         return {
@@ -48,8 +48,8 @@ SMODS.Booster {
     end,
     discovered = true,
     ease_background_colour = function(self)
-        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.stlr_wonder)
-        ease_background_colour({ new_colour = G.C.SET.stlr_wonder, special_colour = G.C.WHITE, contrast = 2 })
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.wonder)
+        ease_background_colour({ new_colour = G.C.SET.wonder, special_colour = G.C.WHITE, contrast = 2 })
     end,
     create_card = function(self, card)
         return {
@@ -80,8 +80,8 @@ SMODS.Booster {
     end,
     discovered = true,
     ease_background_colour = function(self)
-        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.stlr_wonder)
-        ease_background_colour({ new_colour = G.C.SET.stlr_wonder, special_colour = G.C.WHITE, contrast = 2 })
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.wonder)
+        ease_background_colour({ new_colour = G.C.SET.wonder, special_colour = G.C.WHITE, contrast = 2 })
     end,
     create_card = function(self, card)
         return {
