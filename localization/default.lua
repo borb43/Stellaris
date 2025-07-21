@@ -94,7 +94,7 @@ return {
                 name = "Wonder Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:stlr_wonder} Wonder{} cards to",
+                    "{C:attention}#2#{C:wonder} Wonder{} cards to",
                     "be used immediately",
                 }
             }
