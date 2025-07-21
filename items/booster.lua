@@ -14,6 +14,7 @@ SMODS.Booster {
             key = self.key:sub(1, -3),
         }
     end,
+    discovered = true,
     ease_background_colour = function(self)
         ease_colour(G.C.DYN_UI.MAIN, G.C.SET.stlr_wonder)
         ease_background_colour({ new_colour = G.C.SET.stlr_wonder, special_colour = G.C.WHITE, contrast = 2 })
