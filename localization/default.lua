@@ -65,7 +65,7 @@ return {
             c_stlr_stellarstar = {
                 name = "Stellaris",
                 text = {
-                    "Creates a random {C:stellar,E:1}Stellar {C:attention}Joker{}",
+                    "Creates a random {C:stlr_stellar,E:1}Stellar {C:attention}Joker{}",
                     "destroys all other {C:attention}Jokers"
                 }
             }
