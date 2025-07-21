@@ -15,6 +15,7 @@
         "ease_colour",
         "ease_background_colour",
         "other_context",
-        "ease_background_colour_blind"
+        "ease_background_colour_blind",
+        "loc_colour"
     ]
 }

@@ -7,7 +7,7 @@ SMODS.Seal {
     atlas = "modifiers",
     pos = { x = 0, y = 0 },
     discovered = true,
-    badge_colour = G.C.SET.wonder,
+    badge_colour = G.C.PINK,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play and
         G.GAME.current_round.hands_played <= 1 and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then

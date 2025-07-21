@@ -74,6 +74,14 @@ return {
                     "Creates a random {C:stlr_stellar,E:1}Stellar {C:attention}Joker{}",
                     "destroys all other {C:attention}Jokers"
                 }
+            },
+            c_stlr_shroud = {
+                name = "Shroud",
+                text = {
+                    "Add a {C:pink}Pink Seal{}",
+                    "to {C:attention}#1#{} selected",
+                    "card in your hand"
+                }
             }
         },
         wonder = {

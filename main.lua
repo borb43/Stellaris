@@ -31,6 +31,17 @@ SMODS.Atlas {
     py = 95
 }
 
+--for the HEX function, first 6 characters are RGB values, can add 2 more at the end for opacity
+--define and load custom text colours
+G.C.PINK = HEX("eb90e8")
+
+local ref_loc_colour = loc_colour
+function loc_colour(_c, _default)
+    ref_loc_colour(_c, _default)
+    G.ARGS.LOC_COLOURS.pink = G.C.PINK --do this for every colour
+    return G.ARGS.LOC_COLOURS[_c] or _default or G.C.UI.TEXT_DARK
+end
+
 --load optional features
 SMODS.current_mod.optional_features = {
     post_trigger = true,
