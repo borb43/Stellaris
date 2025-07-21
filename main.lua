@@ -18,6 +18,12 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
+SMODS.Atlas {
+    key = "spectral",
+    path = "spectral.png",
+    px = 71,
+    py = 95
+}
 
 --loads everything
 assert(SMODS.load_file("items/common.lua"))()
