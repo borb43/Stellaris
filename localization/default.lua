@@ -79,9 +79,12 @@ return {
         dictionary = {
             k_stlr_stellar = "Stellar",
             k_stlr_resetante = "Ante 1",
+            b_stlr_wonder_cards = "Wonder Cards",
+            k_stlr_wonder = "Wonder"
         },
         labels = {
-            k_stlr_stellar = "Stellar",
+            stlr_stellar = "Stellar",
+            stlr_wonder = "Wonder",
         },
     }
 }
