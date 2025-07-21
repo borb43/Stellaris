@@ -121,7 +121,8 @@ return {
             k_stlr_stellar = "Stellar",
             k_stlr_resetante = "Ante 1",
             b_wonder_cards = "Wonder Cards",
-            k_wonder = "Wonder"
+            k_wonder = "Wonder",
+            k_stlr_wonderpack = "Wonder Pack",
         },
         labels = {
             stlr_stellar = "Stellar",
