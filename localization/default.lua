@@ -97,6 +97,22 @@ return {
                     "{C:attention}#2#{C:wonder} Wonder{} cards to",
                     "be used immediately",
                 }
+            },
+            p_stlr_wonder_jumbo = {
+                name = "Jumbo Wonder Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:wonder} Wonder{} cards to",
+                    "be used immediately"
+                }
+            },
+            p_stlr_wonder_mega = {
+                name = "Mega Wonder Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:wonder} Wonder{} cards to",
+                    "be used immediately"
+                }
             }
         },
     },
