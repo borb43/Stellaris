@@ -48,7 +48,7 @@ SMODS.Consumable {
     config = { extra = { seal = "pink" }, max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_SEALS[card.ability.extra.seal]
-        return { vars = { card.ability.extra.max_highlighted } }
+        return { vars = { card.ability.max_highlighted } }
     end,
     discovered = true,
     atlas = "placeholder",
