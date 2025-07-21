@@ -25,6 +25,7 @@ SMODS.Consumable {
         local target = pseudorandom_element(valid_targets, "dreamwheel")
         local target_edition = pseudorandom_element(editions, "dreamwheel")
         target:set_edition(target_edition, true)
+        card:juice_up(0.3, 0.5)
     end,
     can_use = function(self, card)
         return next(SMODS.Edition:get_edition_cards(G.jokers, true))
