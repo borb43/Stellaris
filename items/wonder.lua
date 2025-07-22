@@ -50,6 +50,6 @@ SMODS.Consumable { --sage, creates an editioned uncommon
         }))
     end,
     can_use = function(self, card)
-        return #G.jokers.cards < G.jokers.config.card_limit or card.area == G.jokers
+        return to_big(#G.jokers.cards) < to_big(G.jokers.config.card_limit) or card.area == G.jokers
     end
 }

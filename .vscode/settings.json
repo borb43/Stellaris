@@ -17,5 +17,8 @@
         "other_context",
         "ease_background_colour_blind",
         "loc_colour"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
     ]
 }

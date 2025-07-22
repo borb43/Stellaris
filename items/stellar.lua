@@ -21,7 +21,7 @@ SMODS.Consumable { --stellaris, creates a stellar joker and destroys all other j
         for _, joker in pairs(G.jokers.cards) do
             if SMODS.is_eternal(joker, card) then eternal_count = eternal_count + 1 end
         end
-        return G.jokers and eternal_count < G.jokers.config.card_limit
+        return G.jokers and to_big(eternal_count) < to_big(G.jokers.config.card_limit)
     end,
     use = function(self, card, area, copier)
         local deletable_jokers = {}
