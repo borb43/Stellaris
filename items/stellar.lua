@@ -55,9 +55,9 @@ SMODS.Consumable { --stellaris, creates a stellar joker and destroys all other j
     end
 }
 
-SMODS.Joker { --circus, X3 mult when a joker is triggered
+SMODS.Joker { --circus, X2.5 mult when a joker is triggered
     key = "circus",
-    config = { extra = { xmult = 3 } },
+    config = { extra = { xmult = 2.5 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,
