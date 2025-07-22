@@ -17,6 +17,7 @@ SMODS.Seal { --pink seal, creates a wonder card if scored on first hand
                 delay = 0,
                 func = function()
                     SMODS.add_card( { set = "wonder" } )
+                    G.GAME.consumeable_buffer = 0
                     return true
                 end
             }))
