@@ -66,7 +66,7 @@ SMODS.Joker { --tipping scales, adds 1 to all numerators and denominators
     key = "scales",
     config = { extra = { oddsboost = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.oddsboost, card.ability.oddsboost + 1, card.ability.oddsboost + 3 } }
+        return { vars = { card.ability.extra.oddsboost, card.ability.extra.oddsboost + 1, card.ability.extra.oddsboost + 3 } }
     end,
     discovered = true,
     rarity = 1,
