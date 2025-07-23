@@ -1,3 +1,5 @@
+loc_colour() --required for adding colours
+
 --for talisman compat
 to_big = to_big or function(x) return x end
 
