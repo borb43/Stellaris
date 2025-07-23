@@ -72,7 +72,7 @@ return {
                 name = "Hypercoin",
                 text = {
                     "Sets all {C:attention}listed {C:green}probabilities{}",
-                    "to {C:green}1 in 3{}"
+                    "to {C:green}#1# in #2#{}"
                 }
             }
         },
