@@ -31,6 +31,9 @@ SMODS.Consumable { --stellaris, applies negative to all jokers (soul equivalent 
                 return true
             end
         }))
+    end,
+    can_use = function(self, card)
+        return true
     end
 }
 
