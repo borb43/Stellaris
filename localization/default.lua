@@ -87,8 +87,7 @@ return {
             c_stlr_stellarstar = {
                 name = "Stellaris",
                 text = {
-                    "Creates a random {C:stlr_stellar,E:1}Stellar {C:attention}Joker{}",
-                    "destroys all other {C:attention}Jokers"
+                    "Applies {C:dark_edition}Negative{} to all held Jokers"
                 }
             },
             c_stlr_shroud = {
@@ -171,7 +170,6 @@ return {
     },
     misc = {
         dictionary = {
-            k_stlr_stellar = "Stellar",
             k_stlr_resetante = "Ante 1",
             b_wonder_cards = "Wonder Cards",
             k_wonder = "Wonder",
@@ -179,7 +177,6 @@ return {
             k_plus_wonder = "+1 Wonder",
         },
         labels = {
-            stlr_stellar = "Stellar",
             wonder = "Wonder",
             stlr_pink_seal = "Pink Seal"
         },

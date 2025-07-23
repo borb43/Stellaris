@@ -6,6 +6,31 @@ SMODS.ConsumableType {
     default = "c_stlr_dreamwheel",
 }
 
+SMODS.Consumable { --stellaris, applies negative to all jokers (soul equivalent of wonder cards)
+    key = "stellarstar",
+    set = "Spectral",
+    atlas = "spectral",
+    pos = { x = 0, y = 0 },
+    hidden = true,
+    soul_set = "wonder",
+    soul_pos = { x = 1, y = 0 },
+    cost = 4,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.15,
+            func = function()
+                for i = 1, #G.jokers.cards do
+                    local next_card = G.jokers.cards[i]
+                    next_card:set_edition( { negative = true } )
+                end
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+    end
+}
+
 SMODS.Consumable { --wheel of dreams, applies a random edition
     key = "dreamwheel",
     discovered = true,
