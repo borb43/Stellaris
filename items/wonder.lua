@@ -9,6 +9,9 @@ SMODS.ConsumableType {
 SMODS.Consumable { --stellaris, applies negative to all jokers (soul equivalent of wonder cards)
     key = "stellarstar",
     set = "Spectral",
+    loc_vars =  function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS.e_negative
+    end,
     atlas = "spectral",
     pos = { x = 0, y = 0 },
     hidden = true,
