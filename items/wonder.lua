@@ -34,7 +34,7 @@ SMODS.Consumable { --stellaris, applies negative to all jokers (soul equivalent 
     end
 }
 
-SMODS.Consumable { --wheel of dreams, applies a random edition
+SMODS.Consumable { --wheel of dreams, applies a random edition to a random joker
     key = "dreamwheel",
     discovered = true,
     set = "wonder",
@@ -56,6 +56,13 @@ SMODS.Consumable { --wheel of dreams, applies a random edition
     end,
     can_use = function(self, card)
         return next(SMODS.Edition:get_edition_cards(G.jokers, true))
+    end,
+    loc_vars = function(self, info_queue, card)
+        for _, ed in pairs(G.P_CENTER_POOLS["Edition"]) do
+            if not G.GAME.banned_keys[ed.key] then
+                info_queue[#info_queue+1] = ed
+            end
+        end
     end
 }
 
