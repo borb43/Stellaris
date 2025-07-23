@@ -4,8 +4,8 @@
 
 Requires [Steamodded](https://github.com/Steamodded/smods), obviously
 Currently adds:
-- 7 Jokers
-- 1 Spectral card
+- 9 Jokers
+- 2 Spectral cards
 - A new consumable type currently featuring 2 cards
 
 If you run into any issues or crashes, be sure to create an [issue](https://github.com/borb43/Stellaris/issues/new) with the crash log attached
