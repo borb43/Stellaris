@@ -10,10 +10,7 @@ G.ARGS.LOC_COLOURS["pink"] = G.C.PINK --for pink seals
 G.C.CRIMSON = HEX("a52a2a")
 G.ARGS.LOC_COLOURS["crimson"] = G.C.CRIMSON --for blind modifying stuff
 
---load optional features
-SMODS.current_mod.optional_features = {
-    post_trigger = true,
-}
+--load optional features (none yet)
 
 --loading stuff
 assert(SMODS.load_file("atlas.lua"))() --loads atlases
