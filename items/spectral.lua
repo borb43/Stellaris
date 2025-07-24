@@ -55,7 +55,6 @@ SMODS.Consumable { --shroud, adds a pink seal
     pos = { x = 2, y = 2 },
     cost = 4,
     use = function(self, card, area, copier)
-        local conv_card = G.hand.highlighted[1]
         G.E_MANAGER:add_event(Event({
             func = function()
                 play_sound('tarot1')
@@ -67,7 +66,9 @@ SMODS.Consumable { --shroud, adds a pink seal
             trigger = 'after',
             delay = 0.1,
             func = function()
-                conv_card:set_seal(card.ability.extra.seal, nil, true)
+                for i in #G.hand.highlighted do
+                    G.hand.highlighted[i]:set_seal(card.ability.extra.seal, nil, true)
+                end
                 return true
             end
         }))
