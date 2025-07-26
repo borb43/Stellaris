@@ -1,24 +1,6 @@
 {
-    "Lua.diagnostics.globals": [
-        "SMODS",
-        "mult",
-        "HEX",
-        "localize",
-        "G",
-        "pseudorandom_element",
-        "Event",
-        "play_sound",
-        "delay",
-        "poll_edition",
-        "edition_generic",
-        "ease_ante",
-        "ease_colour",
-        "ease_background_colour",
-        "other_context",
-        "ease_background_colour_blind",
-        "loc_colour"
-    ],
     "Lua.diagnostics.disable": [
         "lowercase-global"
-    ]
+    ],
+    "Lua.workspace.library": ["C:/Users/remco/AppData/Roaming/Balatro/Mods/Steamodded","C:/Users/remco/AppData/Roaming/Balatro/Mods/lovely/dump"]
 }
