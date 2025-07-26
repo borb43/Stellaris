@@ -2,5 +2,11 @@
     "Lua.diagnostics.disable": [
         "lowercase-global"
     ],
-    "Lua.workspace.library": ["C:/Users/remco/AppData/Roaming/Balatro/Mods/Steamodded","C:/Users/remco/AppData/Roaming/Balatro/Mods/lovely/dump"]
+    "Lua.workspace.library": [
+        "C:/Users/remco/AppData/Roaming/Balatro/Mods/Steamodded",
+        "C:/Users/remco/AppData/Roaming/Balatro/Mods/lovely/dump"
+    ],
+    "Lua.diagnostics.globals": [
+        "edition_generic"
+    ]
 }
