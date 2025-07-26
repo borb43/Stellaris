@@ -54,6 +54,7 @@ SMODS.Consumable { --wheel of dreams, applies a random edition to a random joker
         end
         local target = pseudorandom_element(valid_targets, "dreamwheel")
         local target_edition = pseudorandom_element(editions, "dreamwheel")
+---@diagnostic disable-next-line: need-check-nil
         target:set_edition(target_edition, true)
         card:juice_up(0.3, 0.5)
     end,
