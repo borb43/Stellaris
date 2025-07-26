@@ -38,7 +38,7 @@ SMODS.Consumable { --shatter, like familiar but stone cards
         delay(0.3)
     end,
     can_use = function(self, card)
-        return G.hand and #G.hand.cards > 1
+        return G.hand and to_big(#G.hand.cards) > to_big(1)
     end
 }
 
