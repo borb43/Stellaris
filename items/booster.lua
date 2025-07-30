@@ -1,3 +1,4 @@
+---@diagnostic disable: need-check-nil
 SMODS.Booster {
     key = "wonder_normal_1",
     weight = 0.3,
