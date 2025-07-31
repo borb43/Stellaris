@@ -1,3 +1,4 @@
+---@diagnostic disable: duplicate-set-field
 loc_colour() --required for adding colours
 
 --for talisman compat
