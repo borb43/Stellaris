@@ -10,8 +10,12 @@ function SMODS.poll_enhancement(args)
     if args.ignore_bans then
         if not args.options then --allows ignoring bans with default pool
             args.options = {}
-            for _, v in G.P_CENTER_POOLS.Enhanced do
-                args.options[#args.options + 1] = v
+            for _, v in ipairs(G.P_CENTER_POOLS.Enhanced) do
+                if v.in_pool and type(v.in_pool) == "function" then
+                    if v:in_pool() then
+                        args.options[#args.options+1] = v
+                    end
+                end
             end
             return old_enhancement_roll(args)
         else
