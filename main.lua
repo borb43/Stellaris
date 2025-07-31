@@ -32,7 +32,10 @@ function SMODS.poll_enhancement(args)
             args.options[v] = nil
         end
         if #args.options == 0 or args.options == nil then
-            return nil
+            if next(SMODS.find_mod("entr")) then --default to disavowed if entropy is present
+                args.options[#args.options+1] = "m_entr_disavowed"
+                return old_enhancement_roll(args)
+            else return nil end
         else
             return old_enhancement_roll(args)
         end
