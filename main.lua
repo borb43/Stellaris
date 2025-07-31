@@ -45,8 +45,6 @@ end
 --define and load custom text colours, then add into loc_colours
 G.C.PINK = HEX("eb90e8")
 G.ARGS.LOC_COLOURS["pink"] = G.C.PINK       --for pink seals
-G.C.CRIMSON = HEX("a52a2a")
-G.ARGS.LOC_COLOURS["crimson"] = G.C.CRIMSON --for blind modifying stuff
 
 --load optional features (none yet)
 
