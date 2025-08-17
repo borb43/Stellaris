@@ -7,8 +7,7 @@ to_big = to_big or function(x) return x end
 
 --for the HEX function, first 6 characters are RGB values, can add 2 more at the end for opacity
 --define and load custom text colours, then add into loc_colours
-G.C.PINK = HEX("eb90e8")
-G.ARGS.LOC_COLOURS["pink"] = G.C.PINK       --for pink seals
+
 
 --load optional features (none yet)
 
