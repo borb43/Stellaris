@@ -99,26 +99,10 @@ return {
                 }
             }
         },
-        Other = {
-            undiscovered_construction = {
-                name = "Not Discovered",
-                text = {
-                    "Purchase or use",
-                    "this card in an",
-                    "unseeded run to",
-                    "learn what it does"
-                }
-            }
-        }
     },
     misc = {
         dictionary = {
             k_stlr_resetante = "Ante 1",
-            b_construction_cards = "Construction Cards",
-            k_construction = "Constrution"
-        },
-        labels = {
-            construction = "Construction"
         }
     }
 }
