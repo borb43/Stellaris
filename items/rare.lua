@@ -1,4 +1,4 @@
-SMODS.Joker { --slappy hand, X1 mult for each card in your hand
+SMODS.Joker { --beanstalk, X1 mult for each card in your hand
     key = "beanstalk",
     config = { extra = { mult_per_card = 1 } },
     loc_vars = function(self, info_queue, card)
@@ -18,7 +18,7 @@ SMODS.Joker { --slappy hand, X1 mult for each card in your hand
         end
     end
 }
-
+--[[ scrapped, most likely won't return
 SMODS.Joker { --hypercoin, sets probabilities to 1 in 3. like hypercube but coin so 3 sides
     key = "hypercoin",
     config = { extra = { fixnum = 1, fixdenom = 3 } },
@@ -39,3 +39,4 @@ SMODS.Joker { --hypercoin, sets probabilities to 1 in 3. like hypercube but coin
         end
     end
 }
+]]
