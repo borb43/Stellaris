@@ -22,7 +22,7 @@ return {
                     "{X:mult,C:white}X#1#{} Multi bij scoren"
                 }
             },
-            j_stlr_slappyhand = {
+            j_stlr_beanstalk = {
                 name = "Plakhandje",
                 text = {
                     "{X:mult,C:white}X#2#{} Multi voor elke kaart in je hand",

@@ -1,5 +1,5 @@
 SMODS.Joker { --slappy hand, X1 mult for each card in your hand
-    key = "slappyhand",
+    key = "beanstalk",
     config = { extra = { mult_per_card = 1 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { math.max((((G.hand and G.hand.cards) and #G.hand.cards or 1) * card.ability.extra.mult_per_card) , 1), card.ability.extra.mult_per_card } }

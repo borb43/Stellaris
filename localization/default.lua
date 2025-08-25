@@ -23,8 +23,8 @@ return {
                     "{X:mult,C:white}X#1#{} Mult when scored"
                 }
             },
-            j_stlr_slappyhand = {
-                name = "Slappy Hand",
+            j_stlr_beanstalk = {
+                name = "Beanstalk",
                 text = {
                     "{X:mult,C:white}X#2#{} Mult for every card in your hand",
                     "{C:inactive}(Currently {X:mult,C:white}X#1# {C:inactive} Mult)"
@@ -115,70 +115,10 @@ return {
                 }
             }
         },
-        Other = {
-            stlr_credits = {
-                name = "Credits",
-                text = {
-                    "Idea by {C:attention}#1#{} on {C:attention}#2#{}",
-                    "Art by {C:attention}#3#{} on {C:attention}#4#{}",
-                    "Code by {C:attention}#5#{} on {C:attention}#6#{}"
-                }
-            },
-            undiscovered_stlr_wonder = {
-                name = "Not Discovered",
-                text = {
-                    "Purchase or use",
-                    "this card in an",
-                    "unseeded run to",
-                    "learn what it does",
-                }
-            },
-            p_stlr_wonder_normal = {
-                name = "Wonder Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:wonder} Wonder{} cards to",
-                    "be used immediately",
-                }
-            },
-            p_stlr_wonder_jumbo = {
-                name = "Jumbo Wonder Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:wonder} Wonder{} cards to",
-                    "be used immediately"
-                }
-            },
-            p_stlr_wonder_mega = {
-                name = "Mega Wonder Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:wonder} Wonder{} cards to",
-                    "be used immediately"
-                }
-            },
-            stlr_pink_seal = {
-                name = "Pink Seal",
-                text = {
-                    "Creates a {C:wonder}Wonder{} card",
-                    "when scored on the",
-                    "first hand of round",
-                    "{C:inactive}(Must have room){}"
-                }
-            }
-        },
     },
     misc = {
         dictionary = {
             k_stlr_resetante = "Ante 1",
-            b_wonder_cards = "Wonder Cards",
-            k_wonder = "Wonder",
-            k_stlr_wonderpack = "Wonder Pack",
-            k_plus_wonder = "+1 Wonder",
-        },
-        labels = {
-            wonder = "Wonder",
-            stlr_pink_seal = "Pink Seal"
         },
     }
 }
