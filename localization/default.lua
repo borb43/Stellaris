@@ -99,26 +99,26 @@ return {
                 }
             }
         },
-        wonder = {
-            c_stlr_dreamwheel = {
-                name = "Wheel of Dreams",
+        Other = {
+            undiscovered_construction = {
+                name = "Not Discovered",
                 text = {
-                    "Applies a random {C:dark_edition}edition{}",
-                    "to a random Joker"
-                }
-            },
-            c_stlr_sage = {
-                name = "Sage",
-                text = {
-                    "Creates a random {C:dark_edition}editioned{}",
-                    "{C:uncommon}Uncommon{C:attention} Joker"
+                    "Purchase or use",
+                    "this card in an",
+                    "unseeded run to",
+                    "learn what it does"
                 }
             }
-        },
+        }
     },
     misc = {
         dictionary = {
             k_stlr_resetante = "Ante 1",
+            b_construction_cards = "Construction Cards",
+            k_construction = "Constrution"
         },
+        labels = {
+            construction = "Construction"
+        }
     }
 }
