@@ -53,12 +53,6 @@ return {
                     "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}#2# in #3#{C:inactive})"
                 }
             },
-            j_stlr_circus = {
-                name = "S-001 CIRCUS",
-                text = {
-                    "{X:mult,C:white}X#1#{} Mult when another Joker is triggered"
-                }
-            },
             j_stlr_clover = {
                 name = "57-Leaf Clover",
                 text = {
@@ -74,6 +68,17 @@ return {
                     "Sets all {C:attention}listed {C:green}probabilities{}",
                     "to {C:green}#1# in #2#{}"
                 }
+            },
+            j_stlr_plarva = {
+                name = "Pluripotent Larva",
+                text = {
+                    "Prevents Death",
+                    "Fills all consumable slots",
+                    "with {C:stlr_eternal}eternal {C:spectral}spectral{} cards,",
+                    "destroys all other consumables",
+                    "{C:red}self destructs{}",
+                    "{C:inactive}(Must have room)"
+                }
             }
         },
         Spectral = {
@@ -84,25 +89,13 @@ return {
                     "add {C:attention}#2#{} random {C:dark_edition}Editioned{} {C:attention}Stone{} cards to your hand"
                 }
             },
-            c_stlr_stellarstar = {
-                name = "Stellaris",
-                text = {
-                    "Applies {C:dark_edition}Negative{} to all held Jokers"
-                }
-            },
-            c_stlr_shroud = {
-                name = "Shroud",
-                text = {
-                    "Add a {C:pink}Pink Seal{}",
-                    "to {C:attention}#1#{} selected",
-                    "card in your hand"
-                }
-            }
         },
     },
     misc = {
         dictionary = {
             k_stlr_resetante = "Ante 1",
+            k_evil_saved_ex = "Saved?",
+            ph_stlr_plarva = "Saved by Pluripotent Larva"
         }
     }
 }

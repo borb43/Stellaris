@@ -9,7 +9,8 @@ STLR = {}
 
 --for the HEX function, first 6 characters are RGB values, can add 2 more at the end for opacity
 --define and load custom text colours, then add into loc_colours
-
+G.C.STLR_ETERNAL = HEX("c75985")
+G.ARGS.LOC_COLOURS["stlr_eternal"] = G.C.STLR_ETERNAL
 
 --load optional features
 
