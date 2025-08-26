@@ -36,7 +36,7 @@ SMODS.Joker { --paint smear, gains x0.1 mult when a wild card is scored
     end
 }
 
-SMODS.Joker {
+SMODS.Joker { --pluripotent larva, prevents death but fills consumables with eternal spectrals
     key = "plarva",
     discovered = true,
     rarity = 2,

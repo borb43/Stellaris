@@ -79,6 +79,17 @@ return {
                     "{C:red}self destructs{}",
                     "{C:inactive}(Must have room)"
                 }
+            },
+            j_stlr_singularity = {
+                name = "Singularity",
+                text = {
+                    "When another joker is triggered,",
+                    "destroys it and absorbs it's effects",
+                    "Currently:",
+                    "{C:blue}+#1#{} Chips, {C:red}+#2#{} Mult",
+                    "X#3# Chips, X#4# Mult",
+                    "Earn $#5# at the end of round"
+                }
             }
         },
         Spectral = {
@@ -90,6 +101,16 @@ return {
                 }
             },
         },
+        Other = {
+            i_hate_numberslop = {
+                name = "emult NEVER",
+                text = {
+                    "This joker will not be getting",
+                    "support for ^mult/chips or higher",
+                    "This is fully intentional"
+                }
+            }
+        }
     },
     misc = {
         dictionary = {
