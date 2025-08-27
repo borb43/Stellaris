@@ -15,10 +15,11 @@ SMODS.Joker { --paint smear, gains x0.1 mult when a wild card is scored
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and not context.blueprint
             and SMODS.has_enhancement(context.other_card, "m_wild") then
-            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.multgain
-            return {
-                message = localize { type = "variable", key = "a_xmult", vars = { card.ability.extra.mult } }
-            }
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = "mult",
+                scalar_value = "multgain"
+            })
         end
         if context.joker_main then
             return {

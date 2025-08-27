@@ -46,11 +46,15 @@ SMODS.Joker { --57-leaf clover, scales probabilities with scored clubs
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and not context.blueprint and
         context.other_card:is_suit(card.ability.extra.suit) then
-            card.ability.extra.oddsboost = card.ability.extra.oddsboost + card.ability.extra.oddsgain
-            return {
-                message = localize("k_upgrade_ex"),
-                colour = G.C.GREEN,
-            }
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = "oddsboost",
+                scalar_value = "oddsgain",
+                scaling_message = {
+                    message_key = "k_upgrade_ex",
+                    colour = G.C.GREEN
+                }
+            })
         end
         if context.mod_probability and not context.blueprint then
             return {
