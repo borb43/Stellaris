@@ -23,3 +23,16 @@ end
 STLR.swap_vars = function(var1, var2) --swaps two variables by returning var2, var1
     return var2, var1
 end
+
+lvl_up_handref = level_up_hand
+level_up_hand = function(card, hand, instant, amount)
+    local flags = SMODS.calculate_context({
+        stlr_source_card = card,
+        stlr_level_up = true,
+        stlr_level_count = amount
+    }) or {}
+    if flags.extra_levels then
+        amount = amount + flags.extra_levels
+    end
+    return lvl_up_handref(card, hand, instant, amount)
+end
