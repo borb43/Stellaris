@@ -95,7 +95,7 @@ SMODS.Joker { --pluripotent larva, prevents death but fills consumables with ete
                 return {
                     message = localize("k_evil_saved_ex"),
                     saved = "ph_stlr_plarva",
-                    colour = G.C.PURPLE
+                    colour = G.C.STLR_DEEP_PURPLE
                 }
             end
         end

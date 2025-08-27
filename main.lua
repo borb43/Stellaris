@@ -11,6 +11,7 @@ STLR = {}
 --define and load custom text colours, then add into loc_colours
 G.C.STLR_ETERNAL = HEX("c75985")
 G.ARGS.LOC_COLOURS["stlr_eternal"] = G.C.STLR_ETERNAL
+G.C.STLR_DEEP_PURPLE = HEX("1a013b")
 
 --load optional features
 SMODS.current_mod.optional_features = {
