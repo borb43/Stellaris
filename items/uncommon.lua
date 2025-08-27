@@ -107,7 +107,7 @@ SMODS.Joker {
     config = { extra = { chip_mult = 2, loss = 0.2 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.j_stlr_singularity
-        return { vars = { card.ability.extra.chip_mult * STLR.singularity_calc_lines, card.ability.extra.chip_mult } }
+        return { vars = { card.ability.extra.chip_mult * STLR.singularity_calc_lines, card.ability.extra.chip_mult, card.ability.extra.loss } }
     end,
     discovered = true,
     rarity = 2,

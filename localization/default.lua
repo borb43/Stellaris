@@ -96,6 +96,7 @@ return {
                 text = {
                     "{C:blue}+#2#{} Chips for every line in",
                     "Singularitys calculate function",
+                    "Reduces by {C:blue}#3#{} at the end of round",
                     "{C:inactive}(Currently {C:blue}+#1#{C:inactive} Chips)"
                 }
             }
