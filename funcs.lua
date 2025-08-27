@@ -112,6 +112,7 @@ end
 
 lvl_up_handref = level_up_hand
 level_up_hand = function(card, hand, instant, amount)
+    local ret
     local flags = SMODS.calculate_context({
         source_card = card,
         level_mod = amount,
@@ -123,7 +124,7 @@ level_up_hand = function(card, hand, instant, amount)
     if flags.to_mod then
         return STLR.custom_hand_upgrade(card, hand, instant, nil, nil, amount, nil, true, flags.identifier)
     else
-        local ret = lvl_up_handref(card, hand, instant, amount)
+        ret = lvl_up_handref(card, hand, instant, amount)
     end
     SMODS.calculate_context({
         post_level_up = true,
