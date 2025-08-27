@@ -164,6 +164,7 @@ SMODS.Joker { --singularity, eats other jokers and their effects
                 scalar_table = card.ability.future_events,
                 scalar_value = "dollars"
             })
+            card.ability.future_events.dollars = 0
         end
     end,
     calc_dollar_bonus = function (self, card)
