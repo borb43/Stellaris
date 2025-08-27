@@ -109,7 +109,15 @@ return {
                     "support for ^mult/chips or higher",
                     "This is fully intentional"
                 }
-            }
+            },
+            stlr_dice_seal = {
+                name = "Dice Seal",
+                text = {
+                    "{C:green}Listed probabilities{} are",
+                    "{C:green}#1#{} times as likely to",
+                    "activate from this card"
+                }
+            },
         }
     },
     misc = {
