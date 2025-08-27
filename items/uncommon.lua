@@ -101,3 +101,52 @@ SMODS.Joker { --pluripotent larva, prevents death but fills consumables with ete
         end
     end
 }
+
+SMODS.Joker {
+    key = "spaghetti",
+    config = { extra = { chip_mult = 2, loss = 0.2 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.j_stlr_singularity
+        return { vars = { card.ability.extra.chip_mult * STLR.singularity_calc_lines, card.ability.extra.chip_mult } }
+    end,
+    discovered = true,
+    rarity = 2,
+    atlas = "placeholder",
+    pos = { x = 1, y = 0 },
+    blueprint_compat = true,
+    cost = 7,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                chips = STLR.singularity_calc_lines * card.ability.extra.chip_mult
+            }
+        end
+        if context.end_of_round and context.main_eval and context.game_over == false then
+            if to_big(card.ability.extra.chip_mult - card.ability.extra.loss) <= to_big(0) then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        play_sound('tarot1')
+                        card.T.r = -0.2
+                        card:juice_up(0.3, 0.4)
+                        card.states.drag.is = true
+                        card.children.center.pinch.x = true
+                        G.E_MANAGER:add_event(Event({
+                            trigger = 'after',
+                            delay = 0.3,
+                            blockable = false,
+                            func = function()
+                                card:remove()
+                                return true
+                            end
+                        }))
+                        return true
+                    end
+                }))
+                return {
+                    message = localize('k_eaten_ex'),
+                    colour = G.C.FILTER
+                }
+            end
+        end
+    end
+}

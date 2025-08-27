@@ -90,6 +90,14 @@ return {
                     "X#3# Chips, X#4# Mult",
                     "Earn $#5# at the end of round"
                 }
+            },
+            j_stlr_spaghetti = {
+                name = "Spaghetti Code",
+                text = {
+                    "{C:blue}+#2#{} Chips for every line in",
+                    "Singularitys calculate function",
+                    "{C:inactive}(Currently {C:blue}+#1#{C:inactive} Chips)"
+                }
             }
         },
         Spectral = {

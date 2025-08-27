@@ -173,3 +173,5 @@ SMODS.Joker { --singularity, eats other jokers and their effects
         end
     end
 }
+
+STLR.singularity_calc_lines = 112 --this is for spaghetti
