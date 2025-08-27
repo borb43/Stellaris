@@ -56,54 +56,56 @@ SMODS.Joker { --singularity, eats other jokers and their effects
     cost = 10,
     calculate = function (self, card, context)
         if context.post_trigger and not (context.other_card == card) then
-            local other_ret = context.other_ret.jokers or {}
-            local upgraded = false --true if the joker got stricly upgraded
-            local did_stuff = false --true if anything happened at all
-            for _, key in ipairs(STLR.valid_returns.chips) do
-                if other_ret[key] then upgraded = true end
-                card.ability.extra.chips = card.ability.extra.chips + (other_ret[key] or 0)
+            local other_ret = context.other_ret.jokers
+            if STLR.get_return("chips", other_ret) ~= 0 then
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = "chips",
+                    scalar_table = other_ret,
+                    scalar_value = STLR.get_return_name("chips", other_ret)
+                })
             end
-            for _, key in ipairs(STLR.valid_returns.mult) do
-                if other_ret[key] then upgraded = true end
-                card.ability.extra.mult = card.ability.extra.mult + (other_ret[key] or 0)
+            if STLR.get_return("mult", other_ret) ~= 0 then
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = "mult",
+                    scalar_table = other_ret,
+                    scalar_value = STLR.get_return_name("mult", other_ret)
+                })
             end
-            for _, key in ipairs(STLR.valid_returns.xchips) do
-                if other_ret[key] then upgraded = true end
-                card.ability.extra.xchips = card.ability.extra.xchips + (other_ret[key] or 0)
+            if STLR.get_return("xchips", other_ret) ~= 1 then
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = "xchips",
+                    scalar_table = other_ret,
+                    scalar_value = STLR.get_return_name("xchips", other_ret)
+                })
             end
-            for _, key in ipairs(STLR.valid_returns.xmult) do
-                if other_ret[key] then upgraded = true end
-                card.ability.extra.xmult = card.ability.extra.xmult + (other_ret[key] or 0)
+            if STLR.get_return("xmult", other_ret) ~= 1 then
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = "xmult",
+                    scalar_table = other_ret,
+                    scalar_value = STLR.get_return_name("xmult", other_ret)
+                })
             end
-            for _, key in ipairs(STLR.valid_returns.dollars) do
-                if other_ret[key] then upgraded = true end
-                card.ability.extra.dollars = card.ability.extra.dollars + (other_ret[key] or 0)
+            if STLR.get_return("dollars", other_ret) ~= 0 then
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = "dollars",
+                    scalar_table = other_ret,
+                    scalar_value = STLR.get_return_name("dollars", other_ret)
+                })
             end
-            if other_ret.balance then
-                local new_add = (card.ability.extra.chips + card.ability.extra.mult)/2
-                local new_mult = (card.ability.extra.xchips + card.ability.extra.xmult)/2
-                card.ability.extra.chips = new_add; card.ability.extra.mult = new_add
-                card.ability.extra.xchips = new_mult; card.ability.extra.xmult = new_mult
-                SMODS.calculate_effect({ message = "k_balanced", colour = G.C.PURPLE }, card)
-                did_stuff = true
+            if STLR.get_return("balance", other_ret) then
+                card.ability.extra.chips, card.ability.extra.mult = STLR.balance_vars(card.ability.extra.chips, card.ability.extra.mult)
+                card.ability.extra.xchips, card.ability.extra.xmult = STLR.balance_vars(card.ability.extra.xchips, card.ability.extra.xmult)
+                SMODS.calculate_effect({ message = localize("k_balanced"), colour = G.C.PURPLE }, card)
             end
-            if other_ret.swap then
-                local old_chips = card.ability.extra.chips
-                local old_mult = card.ability.extra.mult
-                card.ability.extra.chips = old_mult; card.ability.extra.mult = old_chips
-                local old_xchips = card.ability.extra.xchips
-                local old_xmult = card.ability.extra.xmult
-                card.ability.extra.xchips = old_xmult; card.ability.extra.xmult = old_xchips
-                SMODS.calculate_effect({ message = "k_swapped_ex" }, card)
-                did_stuff = true
-            end
-            if did_stuff or upgraded then
-                G.E_MANAGER:add_event(Event({
-                    context.other_card:start_dissolve()
-                }))
-            end
-            if upgraded then
-                return { message = "k_upgrade_ex" }
+            if STLR.get_return("swap", other_ret) then
+                card.ability.extra.chips, card.ability.extra.mult = STLR.swap_vars(card.ability.extra.chips, card.ability.extra.mult)
+                card.ability.extra.xchips, card.ability.extra.xmult = STLR.swap_vars(card.ability.extra.xchips, card.ability.extra.xmult)
+                SMODS.calculate_effect({message = localize("k_swapped_ex")}, card)
             end
         end
         if context.joker_main then

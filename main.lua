@@ -18,6 +18,7 @@ SMODS.current_mod.optional_features = {
 }
 
 --loading stuff
+assert(SMODS.load_file("funcs.lua"))() --loads functions
 assert(SMODS.load_file("atlas.lua"))()      --loads atlases
 assert(SMODS.load_file("fileloader.lua"))() --loads mod content files
 
@@ -27,4 +28,6 @@ STLR.valid_returns = { --list of valid returns, used for singularity
         xchips = { "x_chips", "xchips", "Xchip_mod" },
         xmult = { "x_mult", "Xmult", "xmult", "x_mult_mod", "Xmult_mod" },
         dollars = { "p_dollars", "dollars", "h_dollars" },
+        balance = { "balance" },
+        swap = { "swap" }
     }
