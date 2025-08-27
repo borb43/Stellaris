@@ -41,3 +41,45 @@ SMODS.Consumable { --shatter, like familiar but stone cards
         return G.hand and to_big(#G.hand.cards) > to_big(1)
     end
 }
+
+SMODS.Consumable {
+    key = "twist",
+    set = "Spectral",
+    config = { extra = { seal = "stlr_dice" }, max_highlighted = 1 },
+    loc_vars = function (self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_SEALS[card.ability.extra.seal]
+        return { vars = { card.ability.max_highlighted } }
+    end,
+    discovered = true,
+    atlas = "placeholder",
+    pos = { x = 2, y = 2 },
+    cost = 4,
+    use = function (self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            func = function ()
+                play_sound("tarot1")
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.hand.highlighted do
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.1,
+                func = function ()
+                    G.hand.highlighted[i]:set_seal(card.ability.extra.seal, nil, true)
+                    return true
+                end
+            }))
+        end
+        delay(0.5)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = "0.2",
+            func = function ()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+    end
+}

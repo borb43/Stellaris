@@ -100,6 +100,14 @@ return {
                     "add {C:attention}#2#{} random {C:dark_edition}Editioned{} {C:attention}Stone{} cards to your hand"
                 }
             },
+            c_stlr_twist = {
+                name = "Twist",
+                text = {
+                    "Add a {C:green}Dice Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand"
+                }
+            }
         },
         Other = {
             i_hate_numberslop = {
