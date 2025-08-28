@@ -189,3 +189,24 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "hardboil",
+    config = { extra = { dollars = 1 } },
+    loc_vars = function (self, info_queue, card)
+        return { vars = { card.ability.extra.dollars } }
+    end,
+    discovered = true,
+    rarity = 2,
+    atlas = "placeholder",
+    pos = { x = 1, y = 0 },
+    blueprint_compat = true,
+    cost = 6,
+    calculate = function (self, card, context)
+        if context.stlr_earning_money then
+            return {
+                dollar_override = context.stlr_dollar_amount + card.ability.extra.dollars
+            }
+        end
+    end
+}

@@ -120,8 +120,8 @@ end
 easedollar_ref = ease_dollars
 function ease_dollars(mod, instant)
     local flags = SMODS.calculate_context({
-        earning_money = true,
-        dollar_amount = mod
+        stlr_earning_money = true,
+        stlr_dollar_amount = mod
     }) or {}
     if flags.dollar_override then
         mod = flags.dollar_override

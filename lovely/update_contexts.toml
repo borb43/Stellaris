@@ -6,7 +6,7 @@ if flags.cards_to_draw then context.amount = flags.cards_to_draw end
 '''
 position = "after"
 payload = '''
-if flags.dollar_override then context.dollar_amount = flags.dollar_override end
+if flags.dollar_override then context.stlr_dollar_amount = flags.dollar_override end
 '''
 match_indent = true
 times = 1

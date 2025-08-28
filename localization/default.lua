@@ -115,6 +115,13 @@ return {
                     "This joker loses {X:mult,C:white}X#2#{} Mult when a joker is sold",
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
+            },
+            j_stlr_hardboil = {
+                name = "Hard Boiled",
+                text = {
+                    "When you earn any money",
+                    "earn {C:money}$#1# extra"
+                }
             }
         },
         Spectral = {
