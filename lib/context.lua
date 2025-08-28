@@ -116,11 +116,11 @@ level_up_hand = function(card, hand, instant, amount)
 end
 ]]
 
---context.earning_money, for like a single joker (name tbd)
+--context.mod_income, for like a single joker (name tbd)
 easedollar_ref = ease_dollars
 function ease_dollars(mod, instant)
     local flags = SMODS.calculate_context({
-        stlr_earning_money = true,
+        stlr_mod_income = true,
         stlr_dollar_amount = mod
     }) or {}
     if flags.dollar_override then

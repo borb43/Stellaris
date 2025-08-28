@@ -203,7 +203,7 @@ SMODS.Joker { --hard boiled, earn 1 dollar extra when money earned
     blueprint_compat = true,
     cost = 6,
     calculate = function (self, card, context)
-        if context.stlr_earning_money then
+        if context.stlr_mod_income then
             return {
                 dollar_override = context.stlr_dollar_amount + card.ability.extra.dollars
             }
