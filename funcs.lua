@@ -24,8 +24,12 @@ STLR.swap_vars = function(var1, var2) --swaps two variables by returning var2, v
     return var2, var1
 end
 
+--[[ commented out since its not used yet and can definitely be simplified
 --do not EVER call level_up_hand or custom_hand_upgrade during one of their respective contexts. the game WILL crash or result in an infinite loop
 STLR.custom_hand_upgrade = function(card, hand, instant, chips, mult, level, operator, forwarded, identifier)
+    level = level or 0
+    chips = chips or G.GAME.hands[hand].l_chips * level
+    mult = mult or G.GAME.hands[hand].l_mult * level
     local flags = SMODS.calculate_context({
         stlr_modding_hand = true,
         chips_mod = chips,
@@ -135,3 +139,4 @@ level_up_hand = function(card, hand, instant, amount)
     })
     return ret
 end
+]]
