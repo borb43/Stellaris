@@ -66,8 +66,8 @@ SMODS.Joker { --57-leaf clover, scales probabilities with scored clubs
 
 SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     key = "singularity",
-    config = { extra = { chips = 0, mult = 0, xchips = 1, xmult = 1, dollars = 0, retrigger = 0 },
-        immutable = { dollars = 0, chips = 0, mult = 0, xchips = 0, xmult = 0, retrigger = 0 },
+    config = { extra = { chips = 0, mult = 0, xchips = 1, xmult = 1, dollars = 0 },
+        immutable = { dollars = 0, chips = 0, mult = 0, xchips = 0, xmult = 0 },
         to_destroy = {} },
     loc_vars = function(self, info_queue, card)
         if next(SMODS.find_mod("Talisman")) or next(SMODS.find_mod("Cryptlib")) then
@@ -205,7 +205,6 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 local xchips = context.destroy_card:get_chip_x_bonus() * context.destroy_card:get_chip_h_x_bonus()
                 local xmult = context.destroy_card:get_chip_h_x_mult() * context.destroy_card:get_chip_x_mult()
                 local dollars = context.destroy_card:get_h_dollars() + context.destroy_card:get_p_dollars()
-                local retriggers = context.destroy_card.ability.perma_repetitions or 0
                 if chips ~= 0 then
                     card.ability.immutable.chips = chips
                     SMODS.scale_card(card, {
@@ -251,15 +250,6 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                         scalar_value = "dollars"
                     })
                 end
-                if retriggers ~= 0 then
-                    card.ability.immutable.retrigger = retriggers
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = "retrigger",
-                        scalar_table = card.ability.immutable,
-                        scalar_value = "retrigger"
-                    })
-                end
                 for val, _ in pairs(card.ability.immutable) do
                     card.ability.immutable[val] = 0
                 end
@@ -273,4 +263,4 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     end
 }
 
-STLR.singularity_calc_lines = 184 --this is for spaghetti
+STLR.singularity_calc_lines = 175 --this is for spaghetti
