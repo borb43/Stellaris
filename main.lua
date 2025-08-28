@@ -32,3 +32,11 @@ STLR.valid_returns = { --list of valid returns, used for singularity
         balance = { "balance" },
         swap = { "swap" }
     }
+
+STLR.playing_card_effects = {
+    chips = { "bonus", "perma_bonus", "h_chips", "perma_h_chips" },
+    mult = { "mult", "perma_mult", "h_mult", "perma_h_mult" },
+    xchips = { "x_chips", "perma_x_chips", "h_x_chips", "perma_h_x_chips" },
+    xmult = { "x_mult", "perma_x_mult", "h_x_mult", "perma_h_x_mult" },
+    dollars = { "p_dollars", "perma_p_dollars", "h_dollars", "perma_h_dollars" }
+}
