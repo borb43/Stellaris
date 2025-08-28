@@ -107,6 +107,14 @@ return {
                     "another joker gives {C:red}+Mult{}",
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{} Mult)"
                 }
+            },
+            j_stlr_shopping = {
+                name = "Shopping Cart",
+                text = {
+                    "This joker gains {X:mult,C:white}X#2#{} Mult when a joker is bought",
+                    "This joker loses {X:mult,C:white}X#2#{} Mult when a joker is sold",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
+                }
             }
         },
         Spectral = {

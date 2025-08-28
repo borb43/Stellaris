@@ -150,3 +150,42 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "shopping",
+    config = { extra = { xmult = 1, mod = 0.25 } },
+    loc_vars = function (self, info_queue, card)
+        return { vars = { card.ability.extra.xmult, card.ability.extra.mod } }
+    end,
+    discovered = true,
+    rarity = 2,
+    atlas = "placeholder",
+    pos = { x = 1, y = 0 },
+    blueprint_compat = true,
+    cost = 6,
+    calculate = function (self, card, context)
+        if context.buying_card and context.card.ability.set == "Joker" then
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = "xmult",
+                scalar_value = "mod",
+                message_key = "a_xmult"
+            })
+        end
+        if context.selling_card and context.card.ability.set == "Joker" then
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = "xmult",
+                scalar_value = "mod",
+                operation = "-",
+                message_key = "a_xmult"
+            })
+            card.ability.extra.xmult = math.max(card.ability.extra.xmult, 1)
+        end
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.xmult
+            }
+        end
+    end
+}
