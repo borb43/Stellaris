@@ -9,19 +9,3 @@ payload = '''
 hand[self.key] = math.max(hand[self.key] + hand['l_'..self.key]*amount, 0)
 '''
 match_indent = true
-
-[[patches]]
-[patches.pattern]
-target = '''=[SMODS _ "src/utils.lua"]'''
-pattern = '''
-if flags.cards_to_draw then context.amount = flags.cards_to_draw end
-'''
-position = "after"
-payload = '''
-if flags.chips_override then context.chips_mod = flags.chips_override end
-if flags.mult_override then context.mult_mod = flags.mult_override end
-if flags.level_override then context.level_mod = flags.level_override end
-if flags.operator_override then context.mod_operator = flags.operator_override end
-if flags.hand_override then context.hand = flags.hand_override end
-'''
-match_indent = true
