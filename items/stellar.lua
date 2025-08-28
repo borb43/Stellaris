@@ -16,7 +16,7 @@ SMODS.Rarity {
 SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     key = "singularity",
     config = { extra = { chips = 0, mult = 0, xchips = 1, xmult = 1, dollars = 0 },
-        immutable = { dollars = 0, chips = 0, mult = 0, xchips = 0, xmult = 0 },
+        immutable = { dollars = 0 },
         to_destroy = {} },
     loc_vars = function(self, info_queue, card)
         if next(SMODS.find_mod("Talisman")) or next(SMODS.find_mod("Cryptlib")) then
@@ -146,63 +146,6 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 scalar_value = "dollars"
             })
             card.ability.immutable.dollars = 0
-        end
-        if context.destroy_card and not context.blueprint then
-            if next(SMODS.get_enhancements(context.destroy_card)) and not context.destroy_card.debuff and not context.destroy_card.vampired then
-                local chips = context.destroy_card:get_chip_bonus() + context.destroy_card:get_chip_h_bonus()
-                local mult = context.destroy_card:get_chip_mult() + context.destroy_card:get_chip_h_mult()
-                local xchips = context.destroy_card:get_chip_x_bonus() * context.destroy_card:get_chip_h_x_bonus()
-                local xmult = context.destroy_card:get_chip_h_x_mult() * context.destroy_card:get_chip_x_mult()
-                local dollars = context.destroy_card:get_h_dollars() + context.destroy_card:get_p_dollars()
-                if chips ~= 0 then
-                    card.ability.immutable.chips = chips
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = "chips",
-                        scalar_table = card.ability.immutable,
-                        scalar_value = "chips"
-                    })
-                end
-                if mult ~= 0 then
-                    card.ability.immutable.mult = mult
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = "mult",
-                        scalar_table = card.ability.immutable,
-                        scalar_value = "mult"
-                    })
-                end
-                if xchips ~= 1 then
-                    card.ability.immutable.xchips = xchips
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = "xchips",
-                        scalar_table = card.ability.immutable,
-                        scalar_value = "xchips"
-                    })
-                end
-                if xmult ~= 1 then
-                    card.ability.immutable.xmult = xmult
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = "xmult",
-                        scalar_table = card.ability.immutable,
-                        scalar_value = "xmult"
-                    })
-                end
-                if dollars ~= 0 then
-                    card.ability.immutable.dollars = dollars
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = "dollars",
-                        scalar_table = card.ability.immutable,
-                        scalar_value = "dollars"
-                    })
-                end
-                for val, _ in pairs(card.ability.immutable) do
-                    card.ability.immutable[val] = 0
-                end
-            end
         end
     end,
     calc_dollar_bonus = function(self, card)

@@ -83,8 +83,8 @@ return {
             j_stlr_singularity = {
                 name = "Singularity",
                 text = {
-                    "When another eligible joker or enhanced card is",
-                    "scored, destroys it and absorbs its effects",
+                    "When another eligible joker is triggered",
+                    "destroys it and absorbs its effects",
                     "Currently:",
                     "{C:blue}+#1#{} Chips, {C:red}+#2#{} Mult",
                     "X#3# Chips, X#4# Mult",
