@@ -141,7 +141,11 @@ return {
         dictionary = {
             k_stlr_resetante = "Ante 1",
             k_evil_saved_ex = "Saved?",
-            ph_stlr_plarva = "Saved by Pluripotent Larva"
+            ph_stlr_plarva = "Saved by Pluripotent Larva",
+            k_stlr_stellar = "Stellar"
+        },
+        labels = {
+            k_stlr_stellar = "Stellar"
         }
     }
 }

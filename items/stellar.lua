@@ -8,7 +8,8 @@ SMODS.Gradient {
 
 SMODS.Rarity {
     key = "stellar",
-    badge_colour = SMODS.Gradients.stlr_stellar_badge
+    badge_colour = SMODS.Gradients.stlr_stellar_badge,
+    default_weight = 0
 }
 
 
