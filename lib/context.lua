@@ -117,7 +117,7 @@ end
 ]]
 
 --context.mod_income, for like a single joker (name tbd)
-easedollar_ref = ease_dollars
+local easedollar_ref = ease_dollars
 function ease_dollars(mod, instant)
     local flags = SMODS.calculate_context({
         stlr_mod_income = true,
