@@ -155,4 +155,4 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     end
 }
 
-STLR.singularity_calc_lines = 175 --this is for spaghetti
+STLR.singularity_calc_lines = 112 --this is for spaghetti
