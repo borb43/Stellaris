@@ -1,4 +1,4 @@
-SMODS.Seal {
+SMODS.Seal { --dice seal, chance based effects are more likely to trigger from this card
     key = "dice",
     atlas = "modifiers",
     pos = { x = 0, y = 0 },

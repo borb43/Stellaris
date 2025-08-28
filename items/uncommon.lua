@@ -102,7 +102,7 @@ SMODS.Joker { --pluripotent larva, prevents death but fills consumables with ete
     end
 }
 
-SMODS.Joker {
+SMODS.Joker { --spaghetti, gives chips based on singularity's calculate function lines
     key = "spaghetti",
     config = { extra = { chip_mult = 2, loss = 0.2 } },
     loc_vars = function(self, info_queue, card)
@@ -151,7 +151,7 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+SMODS.Joker { --shopping cart, gains xmult when buying joker, loses when selling
     key = "shopping",
     config = { extra = { xmult = 1, mod = 0.25 } },
     loc_vars = function (self, info_queue, card)
@@ -190,7 +190,7 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+SMODS.Joker { --hard boiled, earn 1 dollar extra when money earned
     key = "hardboil",
     config = { extra = { dollars = 1 } },
     loc_vars = function (self, info_queue, card)

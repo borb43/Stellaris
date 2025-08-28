@@ -42,7 +42,7 @@ SMODS.Consumable { --shatter, like familiar but stone cards
     end
 }
 
-SMODS.Consumable {
+SMODS.Consumable { --twist, applies dice seal
     key = "twist",
     set = "Spectral",
     config = { extra = { seal = "stlr_dice" }, max_highlighted = 1 },
