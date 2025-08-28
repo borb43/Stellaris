@@ -66,7 +66,7 @@ SMODS.Joker { --57-leaf clover, scales probabilities with scored clubs
 
 SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     key = "singularity",
-    config = { extra = { chips = 0, mult = 0, xchips = 1, xmult = 1, dollars = 0 }, future_events = { to_destroy = {}, dollars = 0 }},
+    config = { extra = { chips = 0, mult = 0, xchips = 1, xmult = 1, dollars = 0, retrigger = 0 }, future_events = { to_destroy = {}, dollars = 0 }},
     loc_vars = function (self, info_queue, card)
         if next(SMODS.find_mod("Talisman")) or next(SMODS.find_mod("Cryptlib")) then 
             info_queue[#info_queue+1] = { set = "Other", key = "i_hate_numberslop" }
@@ -76,10 +76,11 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     discovered = true,
     rarity = 4,
     atlas = "placeholder",
-    pos = { x = 2, y = 0 },
+    pos = { x = 3, y = 0 },
+    soul_pos = { x = 4, y = 0 },
     cost = 10,
     calculate = function (self, card, context)
-        if context.post_trigger and context.other_card ~= card and not SMODS.is_eternal(context.other_card, card) then
+        if context.post_trigger and context.other_card ~= card and not SMODS.is_eternal(context.other_card, card) and not context.blueprint then
             local other_ret = context.other_ret.jokers
             local did_stuff = false
             if STLR.get_return("chips", other_ret) ~= 0 then
@@ -160,7 +161,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 xchips = card.ability.extra.xchips
             }
         end
-        if context.end_of_round and context.main_eval and context.game_over == false then
+        if context.end_of_round and context.main_eval and context.game_over == false and not context.blueprint then
             for _, joker in G.jokers.cards do
                 if joker.calculate_dollar_bonus and joker ~= card and to_big(joker:calculate_dollar_bonus()) > to_big(0) and not SMODS.is_eternal(joker, card) then
                     card.ability.future_events.dollars = card.ability.future_events.dollars + joker:calculate_dollar_bonus()
@@ -168,7 +169,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 end
             end
         end
-        if context.starting_shop and #card.ability.future_events.to_destroy > 0 then
+        if context.starting_shop and #card.ability.future_events.to_destroy > 0 and not context.blueprint then
             G.E_MANAGER:add_event(Event({
                 func = function ()
                     local first_dissolve = nil
@@ -189,6 +190,9 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 scalar_value = "dollars"
             })
             card.ability.future_events.dollars = 0
+        end
+        if context.destroy_card and not context.blueprint then
+            
         end
     end,
     calc_dollar_bonus = function (self, card)
