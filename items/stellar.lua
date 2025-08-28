@@ -24,17 +24,16 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
         end
         return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xchips, card.ability.extra.xmult, card.ability.extra.dollars } }
     end,
-    discovered = true,
     rarity = "stlr_stellar",
     atlas = "placeholder",
     pos = { x = 0, y = 1 },
     soul_pos = { x = 1, y = 1 },
-    cost = 10,
+    cost = 40,
     calculate = function(self, card, context)
         if context.post_trigger and context.other_card ~= card and not SMODS.is_eternal(context.other_card, card) and not context.blueprint then
             local other_ret = context.other_ret.jokers
             local did_stuff = false
-            if STLR.get_return("chips", other_ret) ~= 0 then
+            if STLR.get_return("chips", other_ret, 0) ~= 0 then
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "chips",
@@ -43,7 +42,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 })
                 did_stuff = true
             end
-            if STLR.get_return("mult", other_ret) ~= 0 then
+            if STLR.get_return("mult", other_ret, 0) ~= 0 then
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "mult",
@@ -52,7 +51,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 })
                 did_stuff = true
             end
-            if STLR.get_return("xchips", other_ret) ~= 1 then
+            if STLR.get_return("xchips", other_ret, 1) ~= 1 then
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "xchips",
@@ -61,7 +60,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 })
                 did_stuff = true
             end
-            if STLR.get_return("xmult", other_ret) ~= 1 then
+            if STLR.get_return("xmult", other_ret, 1) ~= 1 then
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "xmult",
@@ -70,7 +69,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 })
                 did_stuff = true
             end
-            if STLR.get_return("dollars", other_ret) ~= 0 then
+            if STLR.get_return("dollars", other_ret, 0) ~= 0 then
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "dollars",
@@ -79,7 +78,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 })
                 did_stuff = true
             end
-            if STLR.get_return("balance", other_ret) then
+            if STLR.get_return("balance", other_ret, false) then
                 card.ability.extra.chips, card.ability.extra.mult = STLR.balance_vars(card.ability.extra.chips,
                     card.ability.extra.mult)
                 card.ability.extra.xchips, card.ability.extra.xmult = STLR.balance_vars(card.ability.extra.xchips,
@@ -87,7 +86,7 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 SMODS.calculate_effect({ message = localize("k_balanced"), colour = G.C.PURPLE }, card)
                 did_stuff = true
             end
-            if STLR.get_return("swap", other_ret) then
+            if STLR.get_return("swap", other_ret, false) then
                 card.ability.extra.chips, card.ability.extra.mult = STLR.swap_vars(card.ability.extra.chips,
                     card.ability.extra.mult)
                 card.ability.extra.xchips, card.ability.extra.xmult = STLR.swap_vars(card.ability.extra.xchips,
@@ -156,3 +155,34 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
 }
 
 STLR.singularity_calc_lines = 112 --this is for spaghetti
+
+SMODS.Joker {
+    key = "multiplicare",
+    config = { extra = { xmult = 1, gain = 0.3 } },
+    loc_vars = function (self, info_queue, card)
+        return { vars = { card.ability.extra.xmult, card.ability.extra.gain } }
+    end,
+    rarity = "stlr_stellar",
+    atlas = "placeholder",
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 1, y = 1 },
+    cost = 40,
+    calculate = function (self, card, context)
+        if context.post_trigger then
+            local other_ret = context.other_ret.jokers
+            if STLR.get_return("mult", other_ret, 0) >= 0 then
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = "xmult",
+                    scalar_value = "gain",
+                    message_key = "a_xmult"
+                })
+            end
+        end
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.xmult
+            }
+        end
+    end
+}

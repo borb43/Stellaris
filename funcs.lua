@@ -1,9 +1,10 @@
-STLR.get_return = function(type, ret) --Used to check for specific return values in context.post_trigger. type is the type of effect, ret is the return table to check
+STLR.get_return = function(type, ret, fallback) --Used to check for specific return values in context.post_trigger. type is the type of effect, ret is the return table to check. returns fallback if value is not found
     for _, key in ipairs(STLR.valid_returns[type]) do
         if ret[key] then
             return ret[key]
         end
     end
+    return fallback
 end
 
 STLR.get_return_name = function(type, ret) --used to get the name of the return used in other_ret for SMODS.scale_card

@@ -87,8 +87,8 @@ return {
                     "destroys it and absorbs its effects",
                     "Currently:",
                     "{C:blue}+#1#{} Chips, {C:red}+#2#{} Mult",
-                    "X#3# Chips, X#4# Mult",
-                    "Earn $#5# at the end of round"
+                    "{X:chips,C:white}X#3#{} Chips, {X:mult,C:white}X#4#{} Mult",
+                    "Earn {C:money}$#5#{} at the end of round"
                 }
             },
             j_stlr_spaghetti = {
@@ -98,6 +98,14 @@ return {
                     "Singularitys calculate function",
                     "Reduces by {C:blue}#3#{} at the end of round",
                     "{C:inactive}(Currently {C:blue}+#1#{C:inactive} Chips)"
+                }
+            },
+            j_stlr_multiplicare = {
+                name = "Multiplicare",
+                text = {
+                    "This Joker gains {X:mult,C:white}X#2#{} Mult when",
+                    "another joker gives {C:red}+Mult{}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{} Mult)"
                 }
             }
         },
