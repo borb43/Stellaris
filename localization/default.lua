@@ -263,7 +263,7 @@ return {
             bl_house_pos = {
                 name = "The House",
                 text = {
-                    "Cards cannot be drawn face down"
+                    "First drawn hand has twice the cards"
                 }
             },
             bl_manacle_pos = {
@@ -310,6 +310,45 @@ return {
                 text = {
                     "Played {C:attention}face{} cards give",
                     "{X:mult,C:white}X2 Mult when scored"
+                }
+            },
+            bl_psychic_pos = {
+                name = "The Psychic",
+                text = {
+                    "Scored cards give {X:mult,C:white}X1.5{} Mult if",
+                    "played hand has exactly 5 cards"
+                }
+            },
+            bl_serpent_pos = {
+                name = "The Serpent",
+                text = {
+                    "After play or discard,",
+                    "always draw at least 3 cards"
+                }
+            },
+            bl_tooth_pos = {
+                name = "The Tooth",
+                text = {
+                    "Earn {C:money}$1{} for each card played"
+                }
+            },
+            bl_wall_pos = {
+                name = "The Wall",
+                text = {
+                    "{X:mult,C:white}X2{} Mult"
+                }
+            },
+            bl_water_pos = {
+                name = "The Water",
+                text = {
+                    "{C:red}+1{} discard"
+                }
+            },
+            bl_window_pos = {
+                name = "The Window",
+                text = {
+                    "Played cards with Diamond suit",
+                    "give $2 when scored"
                 }
             }
             --#endregion

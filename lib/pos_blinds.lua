@@ -76,10 +76,10 @@ STLR.pos_blind_actives = { --positive blind effects for a future stellar. locali
     end,
     --hook is passive only
     bl_house = function(card, context)
-        if context.stay_flipped and not context.blueprint then
+        if context.drawing_cards and (G.GAME.current_round.hands_played == 0 and G.GAME.current_round.discards_used == 0) then
             SMODS.calculate_effect({
-                stay_flipped = false
-            }, card)
+                cards_to_draw = context.amount * 2
+            })
         end
     end,
     --manacle is passive only
@@ -109,7 +109,9 @@ STLR.pos_blind_actives = { --positive blind effects for a future stellar. locali
                 end
             end
             if context.scoring_name == _handname then
-                ease_dollars(8)
+                SMODS.calculate_effect({
+                    dollars = 8
+                }, card)
             end
         end
     end,
@@ -126,7 +128,50 @@ STLR.pos_blind_actives = { --positive blind effects for a future stellar. locali
                 xmult = 2
             }, card)
         end
+    end,
+    bl_psychic = function(card, context)
+        if context.individual and #context.full_hand == 5 then
+            SMODS.calculate_effect({
+                xmult = 1.5
+            }, card)
+        end
+    end,
+    bl_serpent = function (card, context)
+        if context.drawing_cards and (G.GAME.current_round.hands_played ~= 0 or G.GAME.current_round.discards_used ~= 0) and not context.blueprint then
+            return {
+                cards_to_draw = math.max(context.amount, 3)
+            }
+        end
+    end,
+    bl_tooth = function(card, context)
+        if context.before then
+            SMODS.calculate_effect({
+                dollars = #context.full_hand
+            }, card)
+        end
+    end,
+    bl_wall = function(card, context)
+        if context.joker_main then
+            SMODS.calculate_effect({
+                xmult = 2
+            })
+        end
+    end,
+    bl_wheel = function(card, context)
+        if context.mod_probability and not context.blueprint then
+            return {
+                numerator = context.numerator * 2
+            }
+        end
+    end,
+    bl_window = function(card, context)
+        if context.individual and context.other_card:is_suit("Diamonds") then
+            SMODS.calculate_effect({
+                dollars = 2
+            })
+        end
     end
+    --water is passive only
     --#endregion
 }
 
@@ -148,6 +193,10 @@ STLR.enable_pos_blind_passives = { --passive positive blind effects for a future
     bl_needle = function()
         G.GAME.round_resets.hands = G.GAME.round_resets.hands + 1
         ease_hands_played(1)
+    end,
+    bl_water = function()
+        G.GAME.round_resets.discards = G.GAME.round_resets.discards + 1
+        ease_discard(-1)
     end
     --#endregion
 }
@@ -170,6 +219,10 @@ STLR.disable_pos_blind_passives = { --for disabling passive positive blind effec
     bl_needle = function()
         G.GAME.round_resets.hands = G.GAME.round_resets.hands - 1
         ease_hands_played(-1)
+    end,
+    bl_water = function()
+        G.GAME.round_resets.discards = G.GAME.round_resets.discards - 1
+        ease_discard(-1)
     end
     --#endregion
 }

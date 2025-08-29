@@ -200,11 +200,7 @@ SMODS.Joker {
     soul_pos = { x = 1, y = 1 },
     cost = 40,
     calculate = function (self, card, context)
-        for name, func in pairs(STLR.pos_blind_actives) do
-            if card.ability.defeated_blinds[name] then
-                func(card, context)
-            end
-        end
+        --okay apparently i need to do all this differently and cant just do everything with 1 for loop
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             local blind_key = G.GAME.blind.config.blind.key
             if blind_key and not card.ability.defeated_blinds[blind_key] then
