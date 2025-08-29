@@ -190,7 +190,7 @@ SMODS.Joker {
     loc_vars = function (self, info_queue, card)
         for k, v in pairs(card.ability.defeated_blinds) do
             if v and G.localization.other[k.."_pos"] then
-                info_queue[#info_queue+1] = { set = "Other", key = k.."_pos" }
+                info_queue[#info_queue+1] = { set = "Other", key = k.."_pos", specific_vars = STLR.pos_blind_configs[k] or {} }
             end
         end
     end,
@@ -226,5 +226,6 @@ SMODS.Joker {
         for name, func in pairs(STLR.disable_pos_blind_passives) do
             if card.ability.defeated_blinds[name] then func() end
         end
-    end
+    end,
+    in_pool = function (self, args) return false end
 }
