@@ -76,7 +76,7 @@ return {
                     "Fills all consumable slots",
                     "with {C:stlr_eternal}eternal {C:spectral}spectral{} cards,",
                     "destroys all other consumables",
-                    "{C:red}self destructs{}",
+                    "{C:red,E:2}self destructs{}",
                     "{C:inactive}(Must have room)"
                 }
             },
@@ -142,14 +142,6 @@ return {
             }
         },
         Other = {
-            i_hate_numberslop = {
-                name = "emult NEVER",
-                text = {
-                    "This joker will not be getting",
-                    "support for ^mult/chips or higher",
-                    "This is fully intentional"
-                }
-            },
             stlr_dice_seal = {
                 name = "Dice Seal",
                 text = {
@@ -168,7 +160,8 @@ return {
             k_stlr_stellar = "Stellar"
         },
         labels = {
-            k_stlr_stellar = "Stellar"
+            k_stlr_stellar = "Stellar",
+            stlr_dice_seal = "Dice Seal"
         }
     }
 }

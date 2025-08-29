@@ -19,9 +19,6 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
         immutable = { dollars = 0 },
         to_destroy = {} },
     loc_vars = function(self, info_queue, card)
-        if next(SMODS.find_mod("Talisman")) or next(SMODS.find_mod("Cryptlib")) then
-            info_queue[#info_queue + 1] = { set = "Other", key = "i_hate_numberslop" }
-        end
         return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xchips, card.ability.extra.xmult, card.ability.extra.dollars } }
     end,
     rarity = "stlr_stellar",
