@@ -4,7 +4,6 @@ SMODS.Joker { --R key, sets ante to 1 when sold
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.set_ante } }
     end,
-    discovered = true,
     rarity = 4,
     atlas = "placeholder",
     pos = { x = 3, y = 0 },
@@ -36,7 +35,6 @@ SMODS.Joker { --57-leaf clover, scales probabilities with scored clubs
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.oddsboost, card.ability.extra.oddsgain, localize(card.ability.extra.suit, "suits_singular"), card.ability.extra.oddsboost + 1 } }
     end,
-    discovered = true,
     rarity = 4,
     atlas = "placeholder",
     pos = { x = 3, y = 0 },
@@ -66,6 +64,11 @@ SMODS.Joker { --57-leaf clover, scales probabilities with scored clubs
 
 SMODS.Joker {
     key = "temple",
+    rarity = 4,
+    atlas = "placeholder",
+    pos = { x = 3, y = 0},
+    soul_pos = { x = 4, y = 0 },
+    cost = 20,
     config = { extra = { current_effect = "chips" },
         effect_amounts = { chips = 30, mult = 7, xchips = 0.1, xmult = 0.1 },
         effect_names = { chips = "Chips", mult = "Mult", xchips = "Chips", xmult = "Mult" },
