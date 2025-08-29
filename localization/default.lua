@@ -175,8 +175,7 @@ return {
                     "activate from this card"
                 }
             },
-            --#region
-            --vanilla positive blind effect descriptions
+            --#region vanilla positive blinds
             bl_arm_pos = {
                 name = "The Arm",
                 text = {
@@ -221,6 +220,96 @@ return {
                 name = "Verdant Leaf",
                 text = {
                     "{C:attention}Retriggers{} all playing cards"
+                }
+            },
+            bl_final_vessel_pos = {
+                name = "Violet Vessel",
+                text = {
+                    "{X:mult,C:white}X3{} Mult"
+                }
+            },
+            bl_fish_pos = {
+                name = "The Fish",
+                text = {
+                    "Play up to {C:attention}1{} additional card"
+                }
+            },
+            bl_flint_pos = {
+                name = "The Flint",
+                text = {
+                    "{C:attention}X0.75{} blind size"
+                }
+            },
+            bl_goad_pos = {
+                name = "The Goad",
+                text = {
+                    "Played cards with Spade suit",
+                    "give {C:blue}+75{} Chips when scored"
+                }
+            },
+            bl_head_pos = {
+                name = "The Heart",
+                text = {
+                    "Played cards with Heart suit",
+                    "give {X:mult,C:white}X1.5{} Mult when scored"
+                }
+            },
+            bl_hook_pos = {
+                name = "The Hook",
+                text = {
+                    "Discard up to {C:attention}1{} additional card"
+                }
+            },
+            bl_house_pos = {
+                name = "The House",
+                text = {
+                    "Cards cannot be drawn face down"
+                }
+            },
+            bl_manacle_pos = {
+                name = "The Manacle",
+                text = {
+                    "{C:attention}+1{} hand size"
+                }
+            },
+            bl_mark_pos = {
+                name = "The Mark",
+                text = {
+                    "Retrigger all {C:attention}face{} cards"
+                }
+            },
+            bl_mouth_pos = {
+                name = "The Mouth",
+                text = {
+                    "{X:purple,C:white}X2{} Chips and Mult if played hand",
+                    "has already been played this round"
+                }
+            },
+            bl_needle_pos = {
+                name = "The Needle",
+                text = {
+                    "{C:blue}+1{} hand per round"
+                }
+            },
+            bl_ox_pos = {
+                name = "The Ox",
+                text = {
+                    "Earn {C:money}$8{} if played hand",
+                    "is your most played hand"
+                }
+            },
+            bl_pillar_pos = {
+                name = "The Pillar",
+                text = {
+                    "Retriggers cards that have been",
+                    "played previously this ante"
+                }
+            },
+            bl_plant_pos = {
+                name = "The Plant",
+                text = {
+                    "Played {C:attention}face{} cards give",
+                    "{X:mult,C:white}X2 Mult when scored"
                 }
             }
             --#endregion
