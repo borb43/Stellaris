@@ -154,7 +154,7 @@ SMODS.Joker { --spaghetti, gives chips based on singularity's calculate function
 SMODS.Joker { --shopping cart, gains xmult when buying joker, loses when selling
     key = "shopping",
     config = { extra = { xmult = 1, mod = 0.25 } },
-    loc_vars = function (self, info_queue, card)
+    loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult, card.ability.extra.mod } }
     end,
     discovered = true,
@@ -163,7 +163,7 @@ SMODS.Joker { --shopping cart, gains xmult when buying joker, loses when selling
     pos = { x = 1, y = 0 },
     blueprint_compat = true,
     cost = 6,
-    calculate = function (self, card, context)
+    calculate = function(self, card, context)
         if context.buying_card and context.card.ability.set == "Joker" then
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
@@ -193,7 +193,7 @@ SMODS.Joker { --shopping cart, gains xmult when buying joker, loses when selling
 SMODS.Joker { --hard boiled, earn 1 dollar extra when money earned
     key = "hardboil",
     config = { extra = { dollars = 1 } },
-    loc_vars = function (self, info_queue, card)
+    loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.dollars } }
     end,
     discovered = true,
@@ -202,11 +202,14 @@ SMODS.Joker { --hard boiled, earn 1 dollar extra when money earned
     pos = { x = 1, y = 0 },
     blueprint_compat = true,
     cost = 6,
-    calculate = function (self, card, context)
-        if context.stlr_mod_income then
-            return {
-                dollar_override = context.stlr_dollar_amount + card.ability.extra.dollars
-            }
+    calculate = function(self, card, context)
+        if context.money_altered and context.amount > 0 then
+            local prev_context = SMODS.get_previous_context()
+            if prev_context and (not prev_context.money_altered) then
+                return {
+                    dollars = card.ability.extra.dollars
+                }
+            end
         end
     end
 }
