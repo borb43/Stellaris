@@ -183,3 +183,52 @@ SMODS.Joker { --multiplicare, gains Xmult when a joker gives +mult (i love crypt
         end
     end
 }
+
+SMODS.Joker {
+    key = "collector",
+    config = { defeated_blinds = { } },
+    loc_vars = function (self, info_queue, card)
+        for k, v in pairs(card.ability.defeated_blinds) do
+            if v and G.localization.other[k.."_pos"] then
+                info_queue[#info_queue+1] = { set = "Other", key = k.."_pos" }
+            end
+        end
+    end,
+    rarity = "stlr_stellar",
+    atlas = "placeholder",
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 1, y = 1 },
+    cost = 40,
+    calculate = function (self, card, context)
+        for name, func in pairs(STLR.pos_blind_actives) do
+            if card.ability.defeated_blinds[name] then
+                func(card, context)
+            end
+        end
+        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+            local blind_key = G.GAME.blind.config.blind.key
+            if blind_key and not card.ability.defeated_blinds[blind_key] then
+                card.ability.defeated_blinds[blind_key] = true
+                for name, func in pairs(STLR.enable_pos_blind_passives) do
+                    if name == blind_key then
+                        func()
+                    end
+                end
+                SMODS.calculate_effect({
+                    message = localize("k_upgrade_ex"),
+                    colour = G.C.FILTER
+                })
+            end
+        end
+    end,
+    add_to_deck = function (self, card, from_debuff)
+        for name, func in pairs(STLR.enable_pos_blind_passives) do
+            if card.ability.defeated_blinds[name] then func() end
+        end
+    end,
+    remove_from_deck = function (self, card, from_debuff)
+        for name, func in pairs(STLR.disable_pos_blind_passives) do
+            if card.ability.defeated_blinds[name] then func() end
+        end
+    end
+}

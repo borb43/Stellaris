@@ -132,6 +132,13 @@ return {
                     "{s:0.8}suit and effect",
                     "{s:0.8}change each round"
                 }
+            },
+            j_stlr_collector = {
+                name = "Collector",
+                text = {
+                    "Gains a positive version of",
+                    "the effects of defeated blinds"
+                }
             }
         },
         Spectral = {
@@ -168,6 +175,55 @@ return {
                     "activate from this card"
                 }
             },
+            --#region
+            --vanilla positive blind effect descriptions
+            bl_arm_pos = {
+                name = "The Arm",
+                text = {
+                    "{C:attention}Level up{} the last",
+                    "played hand each round"
+                }
+            },
+            bl_club_pos = {
+                name = "The Club",
+                text = {
+                    "Played cards with {C:clubs}Club{} suit",
+                    "give {C:red}+12{} Mult when scored"
+                }
+            },
+            bl_eye_pos = {
+                name = "The Eye",
+                text = {
+                    "{X:purple,C:white}X2{} Chips and Mult if played hand",
+                    "hasn't been played this round"
+                }
+            },
+            bl_final_acorn_pos = {
+                name = "Amber Acorn",
+                text = {
+                    "Removes all stickers from all",
+                    "jokers at the end of every ante"
+                }
+            },
+            bl_final_bell_pos = {
+                name = "Cerulean Bell",
+                text = {
+                    "{C:attention}+1{} card selection limit"
+                }
+            },
+            bl_final_heart_pos = {
+                name = "Crimson Heart",
+                text = {
+                    "Cards cannot be debuffed"
+                }
+            },
+            bl_final_leaf_pos = {
+                name = "Verdant Leaf",
+                text = {
+                    "{C:attention}Retriggers{} all playing cards"
+                }
+            }
+            --#endregion
         }
     },
     misc = {
