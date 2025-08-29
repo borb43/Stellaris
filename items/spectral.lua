@@ -83,3 +83,28 @@ SMODS.Consumable { --twist, applies dice seal
         }))
     end
 }
+
+SMODS.Consumable {
+    key = "cosmos",
+    set = "Spectral",
+    atlas = "spectral",
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
+    cost = 10,
+    hidden = true,
+    can_use = function (self, card)
+        return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
+    end,
+    use = function (self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function ()
+                play_sound("timpani")
+                SMODS.add_card({ set = "Joker", rarity = "stlr_stellar" })
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+    end
+}

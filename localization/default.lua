@@ -139,6 +139,14 @@ return {
                     "to {C:attention}1{} selected",
                     "card in your hand"
                 }
+            },
+            c_stlr_cosmos = {
+                name = "Cosmos",
+                text = {
+                    "Creates a",
+                    "{C:stlr_stellar,E:1}Stellar{} Joker",
+                    "{C:inactive}(Must have room)"
+                }
             }
         },
         Other = {
