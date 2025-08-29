@@ -24,3 +24,13 @@ end
 STLR.swap_vars = function(var1, var2) --swaps two variables by returning var2, var1
     return var2, var1
 end
+
+STLR.card_sticker_count = function(card) --counts the number of stickers on a card
+    local amt = 0
+    for sticker, _ in pairs(SMODS.Sticker.obj_table) do
+        if card.ability and card.ability[sticker] then
+            amt = amt + 1
+        end
+    end
+    return amt
+end
