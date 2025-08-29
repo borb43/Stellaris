@@ -19,7 +19,6 @@ SMODS.current_mod.optional_features = {
 }
 
 --loading stuff
-assert(SMODS.load_file("lib/funcs.lua"))() --loads functions
 assert(SMODS.load_file("atlas.lua"))() --loads atlases
 assert(SMODS.load_file("fileloader.lua"))() --loads mod content files
 

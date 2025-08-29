@@ -122,6 +122,16 @@ return {
                     "When you earn any money",
                     "earn {C:money}$#1# extra"
                 }
+            },
+            j_stlr_temple = {
+                name = "Temple",
+                text = {
+                    "Each played card with {V:1}#3#{} suit",
+                    "permanently gains {B:2,V:3}#4##1#{} #2#",
+                    "when scored",
+                    "{s:0.8}suit and effect",
+                    "{s:0.8}change each round"
+                }
             }
         },
         Spectral = {
