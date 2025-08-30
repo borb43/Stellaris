@@ -186,45 +186,34 @@ SMODS.Joker { --multiplicare, gains Xmult when a joker gives +mult (i love crypt
 
 SMODS.Joker {
     key = "collector",
-    config = { defeated_blinds = { } },
-    loc_vars = function (self, info_queue, card)
-        for k, v in pairs(card.ability.defeated_blinds) do
-            if v and G.localization.other[k.."_pos"] then
-                info_queue[#info_queue+1] = { set = "Other", key = k.."_pos", specific_vars = STLR.pos_blind_configs[k] or {} }
-            end
-        end
-    end,
     rarity = "stlr_stellar",
     atlas = "placeholder",
     pos = { x = 0, y = 1 },
     soul_pos = { x = 1, y = 1 },
     cost = 40,
     calculate = function (self, card, context)
-        --okay apparently i need to do all this differently and cant just do everything with 1 for loop
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.end_of_round and G.GAME.blind:get_type() == "Boss" then
             local blind_key = G.GAME.blind.config.blind.key
-            if blind_key and not card.ability.defeated_blinds[blind_key] then
-                card.ability.defeated_blinds[blind_key] = true
-                for name, func in pairs(STLR.enable_pos_blind_passives) do
-                    if name == blind_key then
-                        func()
+            if STLR.boss_jokers[blind_key] and G.P_CENTERS[STLR.boss_jokers[blind_key]] then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        SMODS.add_card({
+                            key = STLR.boss_jokers[blind_key],
+                            edition = 'e_negative',
+                            stickers = { 'eternal' }
+                        })
                     end
-                end
-                SMODS.calculate_effect({
-                    message = localize("k_upgrade_ex"),
-                    colour = G.C.FILTER
-                })
+                }))
+            else
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        SMODS.add_card{
+                            set = 'Joker',
+                            edition = 'e_negative'
+                        }
+                    end
+                }))
             end
-        end
-    end,
-    add_to_deck = function (self, card, from_debuff)
-        for name, func in pairs(STLR.enable_pos_blind_passives) do
-            if card.ability.defeated_blinds[name] then func() end
-        end
-    end,
-    remove_from_deck = function (self, card, from_debuff)
-        for name, func in pairs(STLR.disable_pos_blind_passives) do
-            if card.ability.defeated_blinds[name] then func() end
         end
     end,
     in_pool = function (self, args) return false end

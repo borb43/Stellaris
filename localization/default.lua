@@ -136,9 +136,11 @@ return {
             j_stlr_collector = {
                 name = "Collector",
                 text = {
-                    "Gains a positive version of",
-                    "the effects of defeated blinds",
-                    "(currently DISABLED)"
+                    "When boss blind is defeated,",
+                    "creates a {C:dark_edition}negative {C:stlr_eternal}eternal{} joker",
+                    "based on the defeated boss",
+                    "{C:inactive,S:0.8}(Unsupported blinds create a random",
+                    "{C:dark_edition,s:0.8}negative{C:inactive,s:0.8} joker instead)"
                 }
             }
         },
