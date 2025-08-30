@@ -1,7 +1,6 @@
 --important pre-content stuff
 assert(SMODS.load_file("lib/funcs.lua"))() --loads functions
 assert(SMODS.load_file("lib/game_globals.lua"))() --game globals resetting stuff
-assert(SMODS.load_file("lib/mod_globals.lua"))()
 --jokers
 assert(SMODS.load_file("items/joker/common.lua"))()
 assert(SMODS.load_file("items/joker/uncommon.lua"))()

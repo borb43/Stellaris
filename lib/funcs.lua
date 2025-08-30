@@ -40,9 +40,3 @@ STLR.blind_is_special_akyrs = function(blind) --for finding akyrs special blind 
         return true
     end
 end
-
-STLR.blind_is_entr_altpath = function(blind)
-    if blind.altpath then
-        return true
-    end
-end

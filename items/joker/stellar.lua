@@ -193,19 +193,20 @@ SMODS.Joker {
     cost = 40,
     calculate = function(self, card, context)
         if context.end_of_round and G.GAME.blind:get_type() == "Boss" then
-            local blind_key = G.GAME.blind.config.blind.key
-            if STLR.boss_jokers[blind_key] and G.P_CENTERS[STLR.boss_jokers[blind_key]] then
+            local blind = G.GAME.blind.effect
+            if blind.key == "bl_entr_endless_entropy_phase_four" then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        SMODS.add_card({
-                            key = STLR.boss_jokers[blind_key],
+                        SMODS.add_card {
+                            set = 'Joker',
                             edition = 'e_negative',
-                            stickers = { 'eternal' }
-                        })
+                            rarity = "Legendary"
+                        }
                     end
                 }))
-            elseif (next(SMODS.find_mod("aikoyorisshenanigans")) and STLR.blind_is_special_akyrs(G.GAME.blind.effect))
-                or (next(SMODS.find_mod("entr")) and STLR.blind_is_entr_altpath(G.GAME.blind.effect)) then
+            elseif blind.boss.showdown or (next(SMODS.find_mod("aikoyorisshenanigans")) and STLR.blind_is_special_akyrs(blind))
+                or (next(SMODS.find_mod("entr")) and blind.altpath )
+                or (next(SMODS.find_mod("MoreFluff")) and blind.debuff.superboss ) then
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         SMODS.add_card {
@@ -225,14 +226,6 @@ SMODS.Joker {
                     end
                 }))
             end
-        end
-    end,
-    loc_vars = function(self, info_queue, card)
-        if next(SMODS.find_mod("aikoyorisshenanigans")) then
-            info_queue[#info_queue + 1] = { set = "Other", key = "collector_akyrs_notice" }
-        end
-        if next(SMODS.find_mod("entr")) then
-            info_queue[#info_queue+1] = { set = "Other", key = "collector_entr_notice" }
         end
     end
 }

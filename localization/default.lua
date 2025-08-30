@@ -137,10 +137,10 @@ return {
                 name = "Collector",
                 text = {
                     "When boss blind is defeated,",
-                    "creates a {C:dark_edition}negative {C:stlr_eternal}eternal{} joker",
-                    "based on the defeated boss",
-                    "{C:inactive,S:0.8}(Unsupported blinds create a random",
-                    "{C:dark_edition,s:0.8}negative{C:inactive,s:0.8} joker instead)"
+                    "creates a random {C:dark_edition}Negative{} joker",
+                    "For showdown blinds and certain",
+                    "special blind types, instead create",
+                    "a {C:dark_edition}Negative {C:rare}Rare{} joker"
                 }
             }
         },
@@ -176,21 +176,6 @@ return {
                     "{C:green}Listed probabilities{} are",
                     "{C:green}#1#{} times as likely to",
                     "activate from this card"
-                }
-            },
-            collector_akyrs_notice = {
-                name = "Aikoshen Notice",
-                text = {
-                    "Word blinds do not have support",
-                    "On expert, master and forgotten blinds",
-                    "creates a random {C:dark_edition}negative {C:rare}rare{} joker instead"
-                }
-            },
-            collector_entr_notice = {
-                name = "Entropy Notice",
-                text = {
-                    "for non-showdown flipside blinds,",
-                    "creates a random {C:dark_edition}negative {C:rare}rare{} joker instead"
                 }
             }
         }
