@@ -1,6 +1,17 @@
 -- this is just the en-us file, but i cant be assed to copy this every time i change it for a seperate en-us file 
 return {
     descriptions = {
+        Blind = {
+            bl_stlr_superboss_acorn = {
+                name = "Golden Acorn",
+                text = {
+                    "Flips all cards face-down",
+                    "1 in 2 chance to draw cards face down",
+                    "When hand is played, 1 in 2 chance to",
+                    "flip each card in hand, and shuffles all cards"
+                }
+            }
+        },
         Joker = {
             j_stlr_silly = {
                 name = "Silly Joker",
@@ -164,7 +175,7 @@ return {
                 name = "Cosmos",
                 text = {
                     "Creates a",
-                    "{C:stlr_stellar,E:1}Stellar{} Joker",
+                    "{C:stlr_stellaris,E:1}Stellar{} Joker",
                     "{C:inactive}(Must have room)"
                 }
             }

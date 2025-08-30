@@ -1,5 +1,5 @@
 SMODS.Gradient {
-    key = "stellar_badge",
+    key = "stellaris",
     colours = {
         HEX("100D35"),
         HEX("350D0D")
@@ -8,16 +8,14 @@ SMODS.Gradient {
 
 SMODS.Rarity {
     key = "stellar",
-    badge_colour = SMODS.Gradients.stlr_stellar_badge,
+    badge_colour = SMODS.Gradients.stlr_stellaris,
     default_weight = 0
 }
 
 
 SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     key = "singularity",
-    config = { extra = { chips = 0, mult = 0, xchips = 1, xmult = 1, dollars = 0 },
-        immutable = { dollars = 0 },
-        to_destroy = {} },
+    config = { extra = { chips = 0, mult = 0, xchips = 1, xmult = 1, dollars = 0 }, },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xchips, card.ability.extra.xmult, card.ability.extra.dollars } }
     end,
@@ -111,37 +109,6 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
                 xmult = card.ability.extra.xmult,
                 xchips = card.ability.extra.xchips
             }
-        end
-        if context.end_of_round and context.main_eval and context.game_over == false and not context.blueprint then
-            for _, joker in G.jokers.cards do
-                if joker.calculate_dollar_bonus and joker ~= card and to_big(joker:calculate_dollar_bonus()) > to_big(0) and not SMODS.is_eternal(joker, card) then
-                    card.ability.immutable.dollars = card.ability.immutable.dollars +
-                        joker:calculate_dollar_bonus()
-                    card.ability.to_destroy[#card.ability.to_destroy + 1] = joker
-                end
-            end
-        end
-        if context.starting_shop and #card.ability.to_destroy > 0 and not context.blueprint then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    local first_dissolve = nil
-                    for i = 1, #card.ability.to_destroy do
-                        if card.ability.to_destroy[i] ~= card and not SMODS.is_eternal(card.ability.to_destroy[i], card) then
-                            card.ability.to_destroy[i]:start_dissolve(G.C.STLR_DEEP_PURPLE, first_dissolve)
-                            first_dissolve = true
-                        end
-                    end
-                    card.ability.to_destroy = {}
-                    return true
-                end
-            }))
-            SMODS.scale_card(card, {
-                ref_table = card.ability.extra,
-                ref_value = "dollars",
-                scalar_table = card.ability.immutable,
-                scalar_value = "dollars"
-            })
-            card.ability.immutable.dollars = 0
         end
     end,
     calc_dollar_bonus = function(self, card)

@@ -18,6 +18,8 @@ SMODS.current_mod.optional_features = {
     post_trigger = true
 }
 
+STLR.config = SMODS.current_mod.config
+
 --loading stuff
 assert(SMODS.load_file("atlas.lua"))() --loads atlases
 assert(SMODS.load_file("fileloader.lua"))() --loads mod content files
