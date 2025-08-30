@@ -43,6 +43,18 @@ STLR.boss_jokers = { --corresponding jokers for each boss blind for the collecto
     bl_akyrs_final_lilac_lasso = "j_akyrs_aether_portal",
     bl_akyrs_final_salient_stream = "j_akyrs_kyoufuu_all_back",
     bl_akyrs_final_luminous_lemonade = "j_akyrs_gaslighting",
-    bl_akyrs_final_glorious_glaive = "j_akyrs_tetoris"
+    bl_akyrs_final_glorious_glaive = "j_akyrs_tetoris",
     --#endregion
+    --#region entropy blinds
+    bl_entr_scarlet_sun = "j_entr_dr_sunshine",
+    bl_entr_burgundy_baracuda = "j_entr_sandpaper",
+    bl_entr_diamond_dawn = "j_entr_opal",
+    bl_entr_olive_orchard = "j_entr_qu",
+    bl_entr_citrine_comet = "j_entr_fused_lens",
+    bl_entr_endless_entropy_phase_four = "j_entr_ruby",
+    bl_entr_styx = "j_entr_oekrep",
+    bl_entr_choir = "j_entr_tocihc",
+    bl_entr_pandora = "j_entr_kciroy",
+    bl_entr_cassandra = "j_entr_teluobirt",
+    bl_entr_labyrinth = "j_entr_oinac"
 }

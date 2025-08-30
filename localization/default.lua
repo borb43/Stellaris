@@ -178,11 +178,18 @@ return {
                     "activate from this card"
                 }
             },
-            collector_word_blind_notice = {
+            collector_akyrs_notice = {
                 name = "Aikoshen Notice",
                 text = {
                     "Word blinds do not have support",
                     "On expert, master and forgotten blinds",
+                    "creates a random {C:dark_edition}negative {C:rare}rare{} joker instead"
+                }
+            },
+            collector_entr_notice = {
+                name = "Entropy Notice",
+                text = {
+                    "for non-showdown flipside blinds,",
                     "creates a random {C:dark_edition}negative {C:rare}rare{} joker instead"
                 }
             }

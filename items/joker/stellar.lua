@@ -204,7 +204,8 @@ SMODS.Joker {
                         })
                     end
                 }))
-            elseif next(SMODS.find_mod("aikoyorisshenanigans")) and STLR.blind_is_special_akyrs(G.GAME.blind.effect) then
+            elseif (next(SMODS.find_mod("aikoyorisshenanigans")) and STLR.blind_is_special_akyrs(G.GAME.blind.effect))
+                or (next(SMODS.find_mod("entr")) and STLR.blind_is_entr_altpath(G.GAME.blind.effect)) then
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         SMODS.add_card {
@@ -228,7 +229,10 @@ SMODS.Joker {
     end,
     loc_vars = function(self, info_queue, card)
         if next(SMODS.find_mod("aikoyorisshenanigans")) then
-            info_queue[#info_queue + 1] = { set = "Other", key = "collector_word_blind_notice" }
+            info_queue[#info_queue + 1] = { set = "Other", key = "collector_akyrs_notice" }
+        end
+        if next(SMODS.find_mod("entr")) then
+            info_queue[#info_queue+1] = { set = "Other", key = "collector_entr_notice" }
         end
     end
 }
