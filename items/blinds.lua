@@ -3,7 +3,8 @@ SMODS.Blind {
     key = "superboss_acorn",
     dollars = 12,
     boss = {
-        showdown = true
+        showdown = true,
+        min = 10
     },
     debuff = {
         stlr_evil = true
@@ -47,7 +48,4 @@ SMODS.Blind {
             card:flip()
         end
     end,
-    in_pool = function (self)
-        return false
-    end
 }
