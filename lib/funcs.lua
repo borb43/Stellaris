@@ -34,3 +34,9 @@ STLR.card_sticker_count = function(card) --counts the number of stickers on a ca
     end
     return amt
 end
+
+STLR.blind_is_special_akyrs = function(blind) --for finding akyrs special blind types
+    if blind.debuff.akyrs_is_forgotten_blind or blind.debuff.akyrs_blind_difficulty == "expert" or blind.debuff.akyrs_blind_difficulty == "master" then
+        return true
+    end
+end

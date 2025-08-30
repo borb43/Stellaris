@@ -153,10 +153,10 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
 
 STLR.singularity_calc_lines = 112 --this is for spaghetti
 
-SMODS.Joker { --multiplicare, gains Xmult when a joker gives +mult (i love cryptid parodies)
+SMODS.Joker {                     --multiplicare, gains Xmult when a joker gives +mult (i love cryptid parodies)
     key = "multiplicare",
     config = { extra = { xmult = 1, gain = 0.3 } },
-    loc_vars = function (self, info_queue, card)
+    loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult, card.ability.extra.gain } }
     end,
     rarity = "stlr_stellar",
@@ -164,7 +164,7 @@ SMODS.Joker { --multiplicare, gains Xmult when a joker gives +mult (i love crypt
     pos = { x = 0, y = 1 },
     soul_pos = { x = 1, y = 1 },
     cost = 40,
-    calculate = function (self, card, context)
+    calculate = function(self, card, context)
         if context.post_trigger then
             local other_ret = context.other_ret.jokers
             if STLR.get_return("mult", other_ret, 0) >= 0 then
@@ -191,7 +191,7 @@ SMODS.Joker {
     pos = { x = 0, y = 1 },
     soul_pos = { x = 1, y = 1 },
     cost = 40,
-    calculate = function (self, card, context)
+    calculate = function(self, card, context)
         if context.end_of_round and G.GAME.blind:get_type() == "Boss" then
             local blind_key = G.GAME.blind.config.blind.key
             if STLR.boss_jokers[blind_key] and G.P_CENTERS[STLR.boss_jokers[blind_key]] then
@@ -204,10 +204,20 @@ SMODS.Joker {
                         })
                     end
                 }))
+            elseif next(SMODS.find_mod("aikoyorisshenanigans")) and STLR.blind_is_special_akyrs(G.GAME.blind.effect) then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        SMODS.add_card {
+                            set = 'Joker',
+                            edition = 'e_negative',
+                            rarity = 'Rare'
+                        }
+                    end
+                }))
             else
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        SMODS.add_card{
+                        SMODS.add_card {
                             set = 'Joker',
                             edition = 'e_negative'
                         }
@@ -216,5 +226,9 @@ SMODS.Joker {
             end
         end
     end,
-    in_pool = function (self, args) return false end
+    loc_vars = function(self, info_queue, card)
+        if next(SMODS.find_mod("aikoyorisshenanigans")) then
+            info_queue[#info_queue + 1] = { set = "Other", key = "collector_word_blind_notice" }
+        end
+    end
 }

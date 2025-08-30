@@ -1,4 +1,5 @@
-STLR.boss_jokers = {
+STLR.boss_jokers = { --corresponding jokers for each boss blind for the collector
+    --#region vanilla blinds
     bl_arm = "j_space",
     bl_club = "j_onyx_agate",
     bl_eye = "j_todo_list",
@@ -26,5 +27,22 @@ STLR.boss_jokers = {
     bl_wall = "j_stone",
     bl_water = "j_drunkard",
     bl_wheel = "j_oops",
-    bl_window = "j_rough_gem"
+    bl_window = "j_rough_gem",
+    --#endregion
+    --#region aikoshen blinds (doesnt have every blind because too hard with too little jokers)
+    bl_akyrs_the_libre = "j_akyrs_it_is_forbidden_to_dog",
+    bl_akyrs_the_picker = "j_akyrs_utage_chart",
+    bl_akyrs_the_height = "j_akyrs_don_chan",
+    bl_akyrs_the_expiry = "j_akyrs_kita",
+    bl_akyrs_the_nature = "j_akyrs_hibana",
+    bl_akyrs_the_key = "j_akyrs_tldr_joker",
+    bl_akyrs_final_periwinkle_pinecone = "j_akyrs_nijika",
+    bl_akyrs_final_razzle_raindrop = "j_akyrs_brushing_clothes_pattern",
+    bl_akyrs_final_velvet_vapour = "j_akyrs_2fa",
+    bl_akyrs_final_chamomile_cloud = "j_akyrs_diamond_pickaxe",
+    bl_akyrs_final_lilac_lasso = "j_akyrs_aether_portal",
+    bl_akyrs_final_salient_stream = "j_akyrs_kyoufuu_all_back",
+    bl_akyrs_final_luminous_lemonade = "j_akyrs_gaslighting",
+    bl_akyrs_final_glorious_glaive = "j_akyrs_tetoris"
+    --#endregion
 }
