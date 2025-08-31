@@ -118,8 +118,6 @@ SMODS.Joker { --singularity, eats other jokers/enhanced cards and their effects
     end
 }
 
-STLR.singularity_calc_lines = 112 --this is for spaghetti
-
 SMODS.Joker {                     --multiplicare, gains Xmult when a joker gives +mult (i love cryptid parodies)
     key = "multiplicare",
     config = { extra = { xmult = 1, gain = 0.3 } },

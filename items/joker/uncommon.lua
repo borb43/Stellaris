@@ -21,7 +21,7 @@ SMODS.Joker { --paint smear, gains x0.1 mult when a wild card is scored
                 scalar_value = "multgain"
             })
         end
-        if context.joker_main then
+        if context.joker_main and card.ability.extra.mult ~= 0 then
             return {
                 xmult = card.ability.extra.mult
             }
@@ -102,55 +102,6 @@ SMODS.Joker { --pluripotent larva, prevents death but fills consumables with ete
     end
 }
 
-SMODS.Joker { --spaghetti, gives chips based on singularity's calculate function lines
-    key = "spaghetti",
-    config = { extra = { chip_mult = 2, loss = 0.2 } },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_stlr_singularity
-        return { vars = { card.ability.extra.chip_mult * STLR.singularity_calc_lines, card.ability.extra.chip_mult, card.ability.extra.loss } }
-    end,
-    discovered = true,
-    rarity = 2,
-    atlas = "placeholder",
-    pos = { x = 1, y = 0 },
-    blueprint_compat = true,
-    cost = 7,
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                chips = STLR.singularity_calc_lines * card.ability.extra.chip_mult
-            }
-        end
-        if context.end_of_round and context.main_eval and context.game_over == false then
-            if to_big(card.ability.extra.chip_mult - card.ability.extra.loss) <= to_big(0) then
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        play_sound('tarot1')
-                        card.T.r = -0.2
-                        card:juice_up(0.3, 0.4)
-                        card.states.drag.is = true
-                        card.children.center.pinch.x = true
-                        G.E_MANAGER:add_event(Event({
-                            trigger = 'after',
-                            delay = 0.3,
-                            blockable = false,
-                            func = function()
-                                card:remove()
-                                return true
-                            end
-                        }))
-                        return true
-                    end
-                }))
-                return {
-                    message = localize('k_eaten_ex'),
-                    colour = G.C.FILTER
-                }
-            end
-        end
-    end
-}
-
 SMODS.Joker { --shopping cart, gains xmult when buying joker, loses when selling
     key = "shopping",
     config = { extra = { xmult = 1, mod = 0.25 } },
@@ -182,7 +133,7 @@ SMODS.Joker { --shopping cart, gains xmult when buying joker, loses when selling
             })
             card.ability.extra.xmult = math.max(card.ability.extra.xmult, 1)
         end
-        if context.joker_main then
+        if context.joker_main and card.ability.extra.xmult ~= 0 then
             return {
                 xmult = card.ability.extra.xmult
             }
@@ -205,7 +156,7 @@ SMODS.Joker { --hard boiled, earn 1 dollar extra when money earned
     calculate = function(self, card, context)
         if context.money_altered and context.amount > 0 then
             local prev_context = SMODS.get_previous_context()
-            if prev_context and (not prev_context.money_altered) then
+            if prev_context and not prev_context.money_altered then
                 return {
                     dollars = card.ability.extra.dollars
                 }
