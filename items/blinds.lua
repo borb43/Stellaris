@@ -47,9 +47,6 @@ SMODS.Blind {
         for _, card in ipairs(G.consumeables.cards) do
             card:flip()
         end
-    end,
-    in_pool = function(self)
-        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_acorn
     end
 }
 
@@ -74,9 +71,6 @@ SMODS.Blind {
     defeat = function (self)
         SMODS.change_discard_limit(2)
         SMODS.change_play_limit(2)
-    end,
-    in_pool = function (self)
-        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_bell
     end
 }
 
@@ -111,9 +105,6 @@ SMODS.Blind {
             end
             blind.prepped = nil
         end
-    end,
-    in_pool = function (self)
-        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_heart
     end
 }
 
@@ -161,9 +152,6 @@ SMODS.Blind {
                 debuff = true
             }
         end
-    end,
-    in_pool = function (self)
-        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_leaf
     end
 }
 
@@ -182,8 +170,5 @@ SMODS.Blind {
     boss_colour = SMODS.Gradients.stlr_stellaris,
     set_blind = function (self)
         G.GAME.blind.chips = G.GAME.blind.chips ^ 1.1
-    end,
-    in_pool = function (self)
-        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_vessel
     end
 }
