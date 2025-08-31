@@ -70,8 +70,8 @@ SMODS.Joker { --tipping scales, adds 1 to all numerators and denominators
     end,
     discovered = true,
     rarity = 1,
-    atlas = "placeholder",
-    pos = { x = 0, y = 0 },
+    atlas = "common",
+    pos = { x = 3, y = 0 },
     blueprint_compat = false,
     cost = 5,
     calculate = function(self, card, context)
