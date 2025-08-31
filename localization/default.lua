@@ -29,6 +29,12 @@ return {
                     "All playing cards are debuffed",
                     "Played cards lose their modifiers"
                 }
+            },
+            bl_stlr_superboss_vessel = {
+                name = "Titan",
+                text = {
+                    "^1.1 base blind size"
+                }
             }
         },
         Joker = {

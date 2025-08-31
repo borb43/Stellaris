@@ -166,3 +166,24 @@ SMODS.Blind {
         return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_leaf
     end
 }
+
+SMODS.Blind {
+    key = "superboss_vessel",
+    atlas = "blinds",
+    pos = { x = 0, y = 4 },
+    dollars = 12,
+    debuff = {
+        stlr_no_disable = true,
+        stlr_no_reroll = true
+    },
+    boss = {
+        min = 12
+    },
+    boss_colour = SMODS.Gradients.stlr_stellaris,
+    set_blind = function (self)
+        G.GAME.blind.chips = G.GAME.blind.chips ^ 1.1
+    end,
+    in_pool = function (self)
+        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_vessel
+    end
+}
