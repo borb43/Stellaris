@@ -3,10 +3,24 @@ return {
     descriptions = {
         Blind = {
             bl_stlr_superboss_acorn = {
-                name = "The Endless Shroud",
+                name = "Endless Shroud",
                 text = {
                     "All cards are face down",
                     "Shuffle all cards when hand is played"
+                }
+            },
+            bl_stlr_superboss_bell = {
+                name = "Cell V",
+                text = {
+                    "-2 card selection limit"
+                }
+            },
+            bl_stlr_superboss_heart = {
+                name = "Heart of Void",
+                text = {
+                    "Permanently debuff a random joker",
+                    "Permanently debuff one more joker",
+                    "after every hand played"
                 }
             }
         },

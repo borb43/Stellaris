@@ -12,3 +12,4 @@ assert(SMODS.load_file("items/modifier.lua"))()
 --consumables
 assert(SMODS.load_file("items/spectral.lua"))()
 --misc content
+assert(SMODS.load_file("items/blinds.lua"))()
