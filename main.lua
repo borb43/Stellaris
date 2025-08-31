@@ -42,8 +42,13 @@ STLR.playing_card_effects = {
     dollars = { "p_dollars", "perma_p_dollars", "h_dollars", "perma_h_dollars" }
 }
 
-SMODS.current_mod.calculate = function (self, context)
+SMODS.current_mod.calculate = function (self, context) --this tracks defeated bosses this run
     if context.end_of_round and G.GAME.blind:get_type() == "Boss" then
         G.GAME.stlr_superboss_flags[G.GAME.blind.config.blind.key] = true
     end
 end
+
+SMODS.Sound {
+    key = "nuh_uh",
+    path = "nuh_uh.ogg"
+}

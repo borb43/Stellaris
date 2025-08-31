@@ -114,16 +114,16 @@ SMODS.Joker {
         if context.individual and context.other_card:is_suit(G.GAME.current_round.stlr_temple_card, false) then
             local msg_col
             if card.ability.extra.current_effect == "chips" then
-                context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + card.ability.effect_amounts.chips
+                context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.effect_amounts.chips
                 msg_col = G.C.CHIPS
             elseif card.ability.extra.current_effect == "mult" then
-                context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.effect_amounts.mult
+                context.other_card.ability.perma_mult = (context.other_card.ability.perma_mult or 0) + card.ability.effect_amounts.mult
                 msg_col = G.C.MULT
             elseif card.ability.extra.current_effect == "xchips" then
-                context.other_card.ability.perma_x_chips = context.other_card.ability.perma_x_chips + card.ability.effect_amounts.xchips
+                context.other_card.ability.perma_x_chips = (context.other_card.ability.perma_x_chips or 1) + card.ability.effect_amounts.xchips
                 msg_col = G.C.CHIPS
             elseif card.ability.extra.current_effect == "xmult" then
-                context.other_card.ability.perma_x_mult = context.other_card.ability.perma_x_mult + card.ability.effect_amounts.xmult
+                context.other_card.ability.perma_x_mult = (context.other_card.ability.perma_x_mult or 1) + card.ability.effect_amounts.xmult
                 msg_col = G.C.MULT
             end
             return {

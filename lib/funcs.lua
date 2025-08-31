@@ -46,5 +46,33 @@ local blind_disable_ref = Blind.disable
 function Blind:disable()
     if not (self.debuff and self.debuff.stlr_no_disable) then
         blind_disable_ref(self)
+    else play_sound("stlr_nuh_uh")
+    end
+end
+
+STLR.can_reroll_blind = function(blind_key)
+    if G.P_BLINDS[blind_key] and G.P_BLINDS[blind_key].debuff.stlr_no_reroll then return false end
+    return true
+end
+
+local bossrerollref = G.FUNCS.reroll_boss
+function G.FUNCS.reroll_boss(e)
+    if STLR.can_reroll_blind(G.GAME.round_resets.blind_choices.Boss) then
+        local ret = bossrerollref(e)
+        return ret
+    else play_sound("stlr_nuh_uh")
+    end
+end
+
+local bossrerollbuttonref = G.FUNCS.reroll_boss_button
+function G.FUNCS.reroll_boss_button(e)
+    if not STLR.can_reroll_blind(G.GAME.round_resets.blind_choices.Boss) then
+        e.config.colour = G.C.UI.BACKGROUND_INACTIVE
+        e.config.button = nil
+        e.children[1].children[1].config.shadow = false
+        if e.children[2] then e.children[2].children[1].config.shadow = false end
+    else
+        local ret = bossrerollbuttonref(e)
+        return ret
     end
 end

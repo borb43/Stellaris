@@ -22,6 +22,13 @@ return {
                     "Permanently debuff one more joker",
                     "after every hand played"
                 }
+            },
+            bl_stlr_superboss_leaf = {
+                name = "Everlasting Sapling",
+                text = {
+                    "All playing cards are debuffed",
+                    "Played cards lose their modifiers"
+                }
             }
         },
         Joker = {

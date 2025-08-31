@@ -5,7 +5,8 @@ SMODS.Blind {
     pos = { x = 0, y = 2 },
     dollars = 12,
     debuff = {
-        stlr_no_disable = true
+        stlr_no_disable = true,
+        stlr_no_reroll = true
     },
     boss = {
         min = 12
@@ -58,7 +59,8 @@ SMODS.Blind {
     pos = { x = 0, y = 1 },
     dollars = 12,
     debuff = {
-        stlr_no_disable = true
+        stlr_no_disable = true,
+        stlr_no_reroll = true
     },
     boss = {
         min = 12
@@ -84,7 +86,8 @@ SMODS.Blind {
     pos = { x = 0, y = 0 },
     dollars = 12,
     debuff = {
-        stlr_no_disable = true
+        stlr_no_disable = true,
+        stlr_no_reroll = true
     },
     boss = {
         min = 12
@@ -111,5 +114,55 @@ SMODS.Blind {
     end,
     in_pool = function (self)
         return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_heart
+    end
+}
+
+SMODS.Blind {
+    key = "superboss_leaf",
+    atlas = "blinds",
+    pos = { x = 0, y = 3 },
+    dollars = 12,
+    debuff = {
+        stlr_no_disable = true,
+        stlr_no_reroll = true
+    },
+    boss = {
+        min = 12
+    },
+    mult = 3,
+    boss_colour = SMODS.Gradients.stlr_stellaris,
+    calculate = function (self, blind, context)
+        if context.before and context.main_eval then
+            for _, card in ipairs(context.full_hand) do
+                card.vampired = true
+                card:set_ability("c_base", nil, true)
+                card:set_seal()
+                card:set_edition("e_base")
+                for _, sticker in SMODS.Stickers do
+                    if card.ability[sticker] then card.ability[sticker] = nil end
+                end
+                card.ability.perma_bonus = 0; card.ability.perma_h_chips = 0
+                card.ability.perma_mult = 0; card.ability.perma_h_mult = 0
+                card.ability.perma_x_chips = 1; card.ability.perma_h_x_chips = 1
+                card.ability.perma_x_mult = 1; card.ability.perma_h_x_mult = 1
+                card.ability.perma_p_dollars = 0; card.ability.perma_h_dollars = 0
+                card.ability.perma_repetitions = 0
+                G.E_MANAGER:add_event(Event({
+                    func = function ()
+                        card:juice_up()
+                        card.vampired = nil
+                        return true
+                    end
+                }))
+            end
+        end
+        if context.debuff_card and context.debuff_card.area ~= G.jokers then
+            return {
+                debuff = true
+            }
+        end
+    end,
+    in_pool = function (self)
+        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_leaf
     end
 }
