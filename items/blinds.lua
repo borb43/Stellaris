@@ -4,10 +4,6 @@ SMODS.Blind {
     atlas = "blinds",
     pos = { x = 0, y = 2 },
     dollars = 12,
-    debuff = {
-        stlr_no_disable = true,
-        stlr_no_reroll = true
-    },
     boss = {
         min = 12
     },
@@ -55,10 +51,6 @@ SMODS.Blind {
     atlas = "blinds",
     pos = { x = 0, y = 1 },
     dollars = 12,
-    debuff = {
-        stlr_no_disable = true,
-        stlr_no_reroll = true
-    },
     boss = {
         min = 12
     },
@@ -79,10 +71,6 @@ SMODS.Blind {
     atlas = "blinds",
     pos = { x = 0, y = 0 },
     dollars = 12,
-    debuff = {
-        stlr_no_disable = true,
-        stlr_no_reroll = true
-    },
     boss = {
         min = 12
     },
@@ -113,10 +101,6 @@ SMODS.Blind {
     atlas = "blinds",
     pos = { x = 0, y = 3 },
     dollars = 12,
-    debuff = {
-        stlr_no_disable = true,
-        stlr_no_reroll = true
-    },
     boss = {
         min = 12
     },
@@ -160,10 +144,6 @@ SMODS.Blind {
     atlas = "blinds",
     pos = { x = 0, y = 4 },
     dollars = 12,
-    debuff = {
-        stlr_no_disable = true,
-        stlr_no_reroll = true
-    },
     boss = {
         min = 12
     },
