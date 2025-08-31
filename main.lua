@@ -41,3 +41,9 @@ STLR.playing_card_effects = {
     xmult = { "x_mult", "perma_x_mult", "h_x_mult", "perma_h_x_mult" },
     dollars = { "p_dollars", "perma_p_dollars", "h_dollars", "perma_h_dollars" }
 }
+
+SMODS.current_mod.calculate = function (self, context)
+    if context.end_of_round and G.GAME.blind:get_type() == "Boss" then
+        G.GAME.stlr_superboss_flags[G.GAME.blind.config.blind.key] = true
+    end
+end

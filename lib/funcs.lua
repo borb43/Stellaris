@@ -1,3 +1,4 @@
+---@diagnostic disable: duplicate-set-field
 STLR.get_return = function(type, ret, fallback) --Used to check for specific return values in context.post_trigger. type is the type of effect, ret is the return table to check. returns fallback if value is not found
     for _, key in ipairs(STLR.valid_returns[type]) do
         if ret[key] then
@@ -38,5 +39,12 @@ end
 STLR.blind_is_special_akyrs = function(blind) --for finding akyrs special blind types
     if blind.debuff.akyrs_is_forgotten_blind or blind.debuff.akyrs_blind_difficulty == "expert" or blind.debuff.akyrs_blind_difficulty == "master" then
         return true
+    end
+end
+
+local blind_disable_ref = Blind.disable
+function Blind:disable()
+    if not (self.debuff and self.debuff.stlr_no_disable) then
+        blind_disable_ref(self)
     end
 end

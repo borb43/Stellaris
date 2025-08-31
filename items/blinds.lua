@@ -1,23 +1,16 @@
---superbosses (THESE STILL NEED SPRITES)
+
 SMODS.Blind {
     key = "superboss_acorn",
+    atlas = "blinds",
+    pos = { x = 0, y = 2 },
     dollars = 12,
     boss = {
-        showdown = true,
-        min = 10
-    },
-    debuff = {
-        stlr_evil = true
+        min = 12
     },
     mult = 3,
     boss_colour = SMODS.Gradients.stlr_stellaris,
     calculate = function(self, blind, context)
         if context.press_play then
-            for _, card in ipairs(G.hand) do
-                if SMODS.pseudorandom_probability(self, "stlr_super_acorn", 1, 2, "stlr_super_acorn", true) then
-                    card:flip()
-                end
-            end
             G.E_MANAGER:add_event(Event({
                 func = function()
                     if #G.jokers.cards > 1 then G.jokers:shuffle("stlr") end
@@ -29,7 +22,7 @@ SMODS.Blind {
                 end
             }))
         end
-        if context.stay_flipped and SMODS.pseudorandom_probability(self, "stlr_super_acorn", 1, 2, "stlr_super_acorn", true) then
+        if context.stay_flipped then
             return {
                 stay_flipped = true
             }
@@ -37,15 +30,34 @@ SMODS.Blind {
     end,
     set_blind = function(self)
         for _, card in ipairs(G.jokers.cards) do
-            if card.facing == "front" then
-                card:flip()
-            end
-        end
-        for _, card in ipairs(G.hand.cards) do
             card:flip()
         end
         for _, card in ipairs(G.consumeables.cards) do
             card:flip()
         end
     end,
+    defeat = function (self)
+        for _, card in ipairs(G.jokers.cards) do
+            card:flip()
+        end
+        for _, card in ipairs(G.consumeables.cards) do
+            card:flip()
+        end
+    end,
+    in_pool = function(self)
+        return G.GAME.stlr_superboss_flags and G.GAME.stlr_superboss_flags.bl_final_acorn
+    end
+}
+
+SMODS.Blind {
+    key = "superboss_bell",
+    atlas = "blinds",
+    pos = { x = 0, y = 1 },
+    dollars = 12,
+    boss = {
+        min = 12
+    },
+    mult = 3,
+    boss_colour = SMODS.Gradients.stlr_stellaris,
+    
 }

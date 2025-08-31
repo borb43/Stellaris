@@ -10,4 +10,7 @@ end
 
 function SMODS.current_mod.reset_game_globals(run_start)
     reset_stlr_temple_card()
+    if run_start then
+        G.GAME.stlr_superboss_flags = {}
+    end
 end

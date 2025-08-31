@@ -3,12 +3,10 @@ return {
     descriptions = {
         Blind = {
             bl_stlr_superboss_acorn = {
-                name = "Golden Acorn",
+                name = "The Endless Shroud",
                 text = {
-                    "Flips all cards face-down",
-                    "1 in 2 chance to draw cards face down",
-                    "When hand is played, 1 in 2 chance to",
-                    "flip each card in hand, and shuffles all cards"
+                    "All cards are face down",
+                    "Shuffle all cards when hand is played"
                 }
             }
         },
